@@ -1,0 +1,38 @@
+# === Frontend ===
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*
+frontend/*.log
+
+# VS Code settings inside frontend (optional)
+frontend/.vscode/
+
+# TypeScript cache
+frontend/*.tsbuildinfo
+
+# === Backend ===
+backend/bin/
+backend/build/
+backend/.env
+backend/*.log
+
+# Go build files and binaries
+backend/*.exe
+backend/*.dll
+backend/*.so
+backend/*.dylib
+
+# VS Code settings inside backend (optional)
+backend/.vscode/
+
+# === General ===
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Optional Docker files if you don't want to commit generated files
+docker-compose.override.yml
