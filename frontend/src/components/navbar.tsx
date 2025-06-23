@@ -1,0 +1,28 @@
+// Current Buttons: GitHub, LinkedIn, Contact
+const socials = [
+  { name: "GitHub", url: "https://github.com/ppulci" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/peter-pulcini" },
+];
+
+export default function Navbar() {
+  // Navigation links for the portfolio
+  return (
+    <nav className="flex gap-6 pl-8">
+      {socials.map((button) => (
+        <a
+          key={button.name}
+          href={button.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          {button.name}
+        </a>
+      ))}
+
+      <a href="#contact" className="hover:underline">
+        Contact
+      </a>
+    </nav>
+  );
+}
