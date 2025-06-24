@@ -15,8 +15,9 @@ const timeline = [
 export default function Timeline() {
   const [current, setCurrent] = useState(0);
 
+  // timeline bar that associates years with projects
   return (
-    <section>
+    <>
       <div className="flex items-center justify-center gap-4 mb-6">
         <button
           onClick={() => setCurrent((c) => Math.max(0, c - 1))}
@@ -28,7 +29,10 @@ export default function Timeline() {
         </button>
         <div className="flex items-end gap-8">
           {timeline.map((item, idx) => (
-            <div key={item.year} className="flex flex-col items-center">
+            <div
+              key={`${item.year}-${item.projects[0]}-${idx}`}
+              className="flex flex-col items-center"
+            >
               <span
                 className={`mb-2 text-sm ${idx === current ? "font-bold" : ""}`}
               >
@@ -65,6 +69,6 @@ export default function Timeline() {
           ))}
         </ul>
       </div>
-    </section>
+    </>
   );
 }

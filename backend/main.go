@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/gin-contrib/cors"
-	"github.com/gin-gonic/gin"
+	"personal-portfolio/backend/internal/routes"
+
 	"github.com/joho/godotenv"
 )
 
@@ -21,17 +21,7 @@ func main() {
 	}
 
 	// Set up Gin router
-	router := gin.Default()
-
-	// Enable default CORS
-	router.Use(cors.Default())
-
-	// Health check/test route
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	router := routes.SetupRouter()
 
 	log.Printf("Server is running at http://localhost:%s", port)
 	if err := router.Run(":" + port); err != nil {
