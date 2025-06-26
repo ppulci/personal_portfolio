@@ -1,30 +1,41 @@
 @import "tailwindcss";
 
-/* TODO: MAKE COLORS DEFAULT HERE */
 :root {
-  --background: #ededed;
-  --foreground: #0a0a0a;
+  --background: #474747;
+  --foreground: #F2AF29;
+  --tw-bg-opacity: 1;
+  --font-roboto: 'Roboto', sans-serif;
+
+  --potential-primary: #474747;
+  --potential-secondary: #F2AF29;
+  --potential-tertiary: #ad343e;
+  --potential-optional: #2B50AA;
 }
 
-/* TODO: MAKE FONT ROBOTO? */
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/*
+  Light Gray: #474747
+  Slighty Darker Gray: #272727;
+  Yellows: #F2AF29
+  Other: #2B50AA #ad343e
+*/
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* TODO: CHANGE THESE COLORS FOR DARKMODE*/
-    --background: #3a6836;
-    --foreground: #ededed;
-  }
-}
 
-/* TODO: MAKE THIS TEXT ROBOTO */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: var(--font-roboto), sans-serif;
+}
+
+.trimmed-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2rem;
+    padding-left: 2rem
+}
+
+@media (min-width: 1400px) {
+    .trimmed-container {
+        max-width:1400px
+    }
 }

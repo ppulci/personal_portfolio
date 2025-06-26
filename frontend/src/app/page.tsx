@@ -1,49 +1,30 @@
-import Image from "next/image";
-import Timeline from "@/components/Timeline";
 import Navbar from "@/components/Navbar";
+import IntroBlurb from "@/components/IntroBlurb";
+import Timeline from "@/components/Timeline";
 import ContactMe from "@/components/ContactMe"; 
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mx-auto trimmed-container">
       {/* Header w/ Navbar Only */}
-      <header className="py-4 border-b">
+      <header className="mt-6">
         <Navbar />
       </header>
 
-      <main className="max-w-3xl mx-auto py-12 px-4">
+      <main>
         {/* Introduction Blurb and Bio */}
-        <section className="flex flex-col md:flex-row items-center gap-8 mb-12">
-          <div>
-            <h1 className="text-3xl font-bold mb-2">
-              Hey there! {/* TODO: add waving hand emoji here */}
-              I&apos;m Peter Pulcini — full-stack developer and modding
-              enthusiast! Born and raised in Toronto, Canada, I grew up with a
-              passion for building and gaming. These days, I work heavily with
-              TypeScript, Java, and Python. If you need help with an idea or
-              just want to chat tech, feel free to reach out!
-              {/* TODO: bold "reach out" and link it to the contact page */}
-            </h1>
-            <p className="text-lg">
-              I am a full-stack developer passionate about building web
-              applications. Welcome to my portfolio!
-            </p>
-          </div>
-          <Image
-            src="/temp_image.png"
-            alt="temp image"
-            width={150}
-            height={150}
-          />
+        <section className="w-full min-h-screen flex items-center justify-center bg-red-50">         {/* [calc(100vh-6rem)] */}
+
+          <IntroBlurb />
         </section>
 
         {/* Projects/Work Timeline */}
-        <section>
+        <section className="w-full min-h-screen flex items-center justify-center py-0 bg-amber-50">
           <Timeline />
         </section>
 
         {/* Contact Information Fill */}
-        <section id="contact">
+        <section id="contact" className="py-12 bg-blue-50" >
           <ContactMe />
           {/* TODO: potentially add social icons with links to pages like the navbar */}
           {/* TODO: it could say "Alternatively," then the icons below them */}
@@ -51,24 +32,9 @@ export default function Home() {
       </main>
 
       {/* Footer w/ Copyright and Year Only */}
-      <footer className="py-4 text-left text-gray-400">
+      <footer className="text-left text-gray-400 py-8">
         &copy; {new Date().getFullYear()} Peter Pulcini
       </footer>
     </div>
   );
 }
-
-// Hey There!
-// I'm Peter Pulcini,
-// Full-stack Developer and Mod Enthusiast!
-// Born and raised in Toronto, Canada, I grew up with a passion for building and gaming. (making vs building?) (sounds a bit off)
-// I work heavily with TypeScript, Java and Python.
-// If you need help with an idea or just want to chat about tech, feel free to reach out!
-
-// Hey there!
-// I'm Peter Pulcini — full-stack dev, modding fan, and builder at heart.
-// I grew up in Toronto, Canada, with a love for games and making things — now I bring that energy to code.
-// I mostly work with TypeScript, Java, and Python.
-// If you’ve got a cool idea or just want to nerd out over tech, hit me up!
-
-// If you’ve got an idea you want help with, or just want to talk tech, I’d love to connect!

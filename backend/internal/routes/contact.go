@@ -13,6 +13,7 @@ import (
 )
 
 type ContactRequest struct {
+	Name	string `json:"name" binding:"required"`
 	Email   string `json:"email" binding:"required,email"`
 	Message string `json:"message" binding:"required"`
 }
@@ -32,7 +33,7 @@ func ContactHandler(c *gin.Context) {
 	params := &resend.SendEmailRequest{
 		From:    "Portfolio Site <onboarding@resend.dev>",
 		To:      []string{toEmail},
-		Html:    "<strong>From:</strong> " + req.Email + "<br/><br/>" + req.Message,
+		Html:    "<strong>Sender Name: " + req.Name + "</strong><br/><strong>From:</strong>" + req.Email + "<br/><br/>" + req.Message,
 		Subject: "Portfolio Contact Form",
 		ReplyTo: req.Email,
 	}
