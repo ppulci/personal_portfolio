@@ -13,18 +13,18 @@ export default function Home() {
 
       <main>
         {/* Introduction Blurb and Bio */}
-        <section className="w-full min-h-screen flex items-center justify-center bg-red-50">         {/* [calc(100vh-6rem)] */}
+        <section className="w-full min-h-screen flex items-center justify-center bg-red-200">         {/* [calc(100vh-6rem)] */}
 
           <IntroBlurb />
         </section>
 
         {/* Projects/Work Timeline */}
-        <section className="w-full min-h-screen flex items-center justify-center py-0 bg-amber-50">
+        <section className="w-full min-h-screen flex items-center justify-center py-0 bg-amber-200">
           <Timeline />
         </section>
 
         {/* Contact Information Fill */}
-        <section id="contact" className="py-12 bg-blue-50" >
+        <section id="contact" className="py-12 bg-blue-200" >
           <ContactMe />
           {/* TODO: potentially add social icons with links to pages like the navbar */}
           {/* TODO: it could say "Alternatively," then the icons below them */}

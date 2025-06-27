@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function IntroBlurb() {
   return (
     <>
-      <div>
+      <div className="flex flex-col">
         <h1 className="text-3xl font-bold mb-2">
           <span className="block">Hey there</span>{" "}
           {/* TODO: add waving hand emoji here */}
@@ -18,13 +18,12 @@ export default function IntroBlurb() {
             building and gaming.
           </span>
           <span className="block">
-            {" "}
             These days, I work heavily with TypeScript, Java, and Python.
           </span>
           <span className="block">
             If you need help with an idea or just want to chat tech, feel free
             to reach out!
-          </span>{" "}
+          </span>
           {/* TODO: bold "reach out" and link it to the contact page */}
         </p>
       </div>
@@ -45,6 +44,3 @@ export default function IntroBlurb() {
 // If you need help with an idea or just want to chat about tech, feel free to reach out!
 // If you’ve got a cool idea or just want to nerd out over tech, hit me up!
 // If you’ve got an idea you want help with, or just want to talk tech, I’d love to connect!
-
-
-
