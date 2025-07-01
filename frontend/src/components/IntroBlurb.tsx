@@ -2,33 +2,45 @@ import Image from "next/image";
 
 export default function IntroBlurb() {
   return (
-    <>
-      <div className="flex flex-col">
-        <h1 className="text-3xl font-bold mb-2">
-          <span className="block">Hey there</span>{" "}
-          {/* TODO: add waving hand emoji here */}
-          <span className="block">I&apos;m Peter Pulcini,</span>
-          <span className="block">
-            full-stack developer and modding enthusiast!
+    <div className="flex w-full h-full items-center justify-between gap-x-12">
+      
+      {/* Left: Text */}
+      <div className="flex flex-col flex-1 space-y-10">
+        <h1 className="flex flex-col text-4xl font-bold space-y-6">
+          <span className="text-[#F2AF29]">Hey there 👋</span>
+          <span className="block text-5xl">I&apos;m Peter Pulcini,</span>
+          <span className="block text-3xl">
+            Full-stack developer and modding enthusiast!
           </span>
         </h1>
-        <p className="text-md">
-          <span className="block">
+        <p className="flex flex-col text-md space-y-4">
+          <span>
             Born and raised in Toronto, Canada, I grew up with a passion for
             building and gaming.
           </span>
-          <span className="block">
+          <span>
             These days, I work heavily with TypeScript, Java, and Python.
           </span>
-          <span className="block">
-            If you need help with an idea or just want to chat tech, feel free
-            to reach out!
+          <span>
+            If you need help with an idea or just want to chat tech,{" "}
+            <a href="#contact" className="font-bold text-pp-one">
+              feel free to reach out!
+            </a>
           </span>
-          {/* TODO: bold "reach out" and link it to the contact page */}
         </p>
       </div>
-      <Image src="/temp_image.png" alt="temp image" width={150} height={150} />
-    </>
+      
+      {/* Right: Image */}
+      <div className="flex flex-1 justify-center items-center">
+        <Image
+          src="/temp_image.png"
+          alt="Peter Pulcini"
+          width={500}
+          height={500}
+          className="object-cover"
+        />
+      </div>
+    </div>
   );
 }
 
@@ -40,6 +52,8 @@ export default function IntroBlurb() {
 
 // Born and raised in Toronto, Canada, I grew up with a passion for building and gaming. (making vs building?) (sounds a bit off)
 // I grew up in Toronto, Canada, with a love for games and making things — now I bring that energy to code.
+// I grew up in Toronto, Canada, with a love for games and making things — check out my projects below!
+
 
 // If you need help with an idea or just want to chat about tech, feel free to reach out!
 // If you’ve got a cool idea or just want to nerd out over tech, hit me up!
