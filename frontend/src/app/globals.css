@@ -1,31 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  --background: #212121;
-  --foreground: #FFFFFF;
-  --tw-bg-opacity: 1;
-  --font-roboto: 'Roboto', sans-serif;
+@theme {
+  --color-pp-black: #0A0A0A;
+  --color-pp-yellow: #ffbe42;
+  --color-pp-blue: #2B50AA;
+  --color-pp-grey: #474747;
+  --color-pp-five: #ffbe42;
+  --color-pp-six: #0A0A0A;
 
-  --potential-primary: #474747;
-  --potential-secondary: #F2AF29;
-  --potential-tertiary: #ad343e;
-  --potential-optional: #2B50AA;
+}
+.color-viewer {
+  --test1: #212121;
+  --test2: #F7C96E;
+  --test3: #ad343e;
+  --test4: #474747;
+  --test5: #F2AF29;
+  --test6: #0A0A0A;
+  --test7: #ffbe42; /* EMOJI HAND COLOR */
+  --test8: #272727;
+  --test9: #0D0D0D;
+  --test10: #2B50AA;
+  --test11: #707070;
+
 }
 
-/*
-  Light Gray: #474747
-  Slighty Darker Gray: #272727;
-  Yellows: #F2AF29
-  Other: #2B50AA #ad343e #0D0D0D
-
-  Yellow: #F7C96E
-  Black: #212121
-*/
-
+:root {
+  --tw-bg-opacity: 1;
+  --font-roboto: 'Roboto', sans-serif;
+}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  color: #FFFFFF;
   font-family: var(--font-roboto), sans-serif;
 }
 
