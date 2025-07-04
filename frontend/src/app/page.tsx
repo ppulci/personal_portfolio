@@ -1,40 +1,40 @@
 import Navbar from "@/components/Navbar";
 import IntroBlurb from "@/components/IntroBlurb";
 import Timeline from "@/components/Timeline";
-import ContactMe from "@/components/ContactMe"; 
+import ContactMe from "@/components/ContactMe";
 
 export default function Home() {
   return (
-    <div className="min-h-screen mx-auto trimmed-container">
+    <>
       {/* Header w/ Navbar Only */}
-      <header className="mt-6">
+      <header className="pt-6 bg-pp-blue">
         <Navbar />
       </header>
 
-      <main>
-        {/* Introduction Blurb and Bio */}
-        <section className="w-full min-h-[calc(100vh-6rem)] flex items-center justify-center border-1">         {/* screen */}
+      {/* Introduction Blurb and Bio */}
+      {/* Gradient to Black or PP-Black??? */}
+      <section className="min-h-[calc(100vh-6rem)] flex items-center justify-center bg-gradient-to-b from-pp-blue to-pp-black"> 
+        {/* */}
+        <IntroBlurb />
+      </section>
 
-          <IntroBlurb />
-        </section>
+      {/* Projects/Work Timeline */}
+      {/* Gradient FROM previous ending color to chosen timeline color */}      
+      <Timeline />
 
-        {/* Projects/Work Timeline */}
-        <section className="w-full min-h-screen flex items-center justify-center py-0 border-1">
-          <Timeline />
-        </section>
-
-        {/* Contact Information Fill */}
-        <section id="contact" className="py-12 border-1" >
-          <ContactMe />
-          {/* TODO: potentially add social icons with links to pages like the navbar */}
-          {/* TODO: it could say "Alternatively," then the icons below them */}
-        </section>
-      </main>
+      {/* Contact Information Fill */}
+      <section id="contact" className="py-12 bg-pp-black">
+        <ContactMe />
+        {/* TODO: potentially add social icons with links to pages like the navbar */}
+        {/* TODO: it could say "Alternatively," then the icons below them */}
+      </section>
 
       {/* Footer w/ Copyright and Year Only */}
-      <footer className="text-left text-gray-400 py-8">
-        &copy; {new Date().getFullYear()} Peter Pulcini
+      <footer className="text-left text-gray-400 py-8 bg-pp-black">
+        <div className="trimmed-container">
+          &copy; {new Date().getFullYear()} Peter Pulcini
+        </div>
       </footer>
-    </div>
+    </>
   );
 }

@@ -10,8 +10,30 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Peter Pulcini | Portfolio",
+  title: {
+    default: "Peter Pulcini | Portfolio",
+    template: "%s | Peter Pulcini",
+  },
   description: "Peter's Portfolio Site",
+  openGraph: {
+    title: "Peter Pulcini | Portfolio",
+    description: "Peter's Portfolio Site",
+    url: "https://yourdomain.com", // TODO: ADD DOMAIN
+    siteName: "Peter Pulcini Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

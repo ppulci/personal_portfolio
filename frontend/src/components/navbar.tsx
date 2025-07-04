@@ -1,8 +1,5 @@
-import Image from "next/image";
-
-// Current Buttons: Icon, GitHub, LinkedIn, Contact
+// Current Buttons: GitHub, LinkedIn, Contact
 const socials = [
-  // Image icon is handled separately below
   { name: "GitHub", url: "https://github.com/ppulci" },
   { name: "LinkedIn", url: "https://linkedin.com/in/peter-pulcini" },
   // Contact button is handled separately below
@@ -11,9 +8,7 @@ const socials = [
 export default function Navbar() {
   // Navigation links for the portfolio
   return (
-    <nav className="flex gap-6 text-lg">
-      <Image src="/temp_image.png" alt="temp image" width={25} height={5} />
-
+    <nav className="flex gap-6 text-lg trimmed-container">
       {socials.map((button) => (
         <a
           key={button.name}
