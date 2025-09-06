@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
+    "framer-motion": "^12.23.12",
     "next": "15.3.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "typeit-react": "^2.7.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

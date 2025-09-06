@@ -31,63 +31,86 @@ export default function ContactMe() {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <h2 className="text-5xl font-bold mb-8 text-center">Contact Me</h2>
-      <form onSubmit={handleSubmit} className="w-full max-w-xl flex flex-col gap-6">
+      <h2 className="text-5xl font-bold mb-4 text-center text-gray-800">
+        Reach <span className="text-yellow-500">Out</span>
+      </h2>
+      <p className="text-gray-600 text-center mb-10 max-w-2xl">
+        Interested in what I'm building? Let's connect and see how we can collaborate.
+      </p>
+
+      <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-6">
         {/* Name and Email side by side */}
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex-1 flex flex-col">
-            <label htmlFor="name" className="mb-1 text-left font-semibold">Your Name</label>
+            <label htmlFor="name" className="mb-2 text-left font-medium text-gray-700">
+              Full Name <span className="text-red-500">*</span>
+            </label>
             <input
               id="name"
               name="name"
               required
-              className="border rounded px-3 py-2"
-              placeholder="John Doe"
+              className="border-2 border-gray-300 rounded-md px-4 py-3 text-gray-800 placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-colors"
+              placeholder="Peter Parker"
             />
           </div>
           <div className="flex-1 flex flex-col">
-            <label htmlFor="email" className="mb-1 text-left font-semibold">Your Email</label>
+            <label htmlFor="email" className="mb-2 text-left font-medium text-gray-700">
+              Email Address <span className="text-red-500">*</span>
+            </label>
             <input
               id="email"
               type="email"
               name="email"
               required
-              className="border rounded px-3 py-2"
-              placeholder="name@email.com"
+              className="border-2 border-gray-300 rounded-md px-4 py-3 text-gray-800 placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-colors"
+              placeholder="name@example.com"
             />
           </div>
         </div>
 
-        {/* Message below, centered */}
+        {/* Message below, full width */}
         <div className="flex flex-col">
-          <label htmlFor="message" className="mb-1 text-left font-semibold">Message</label>
+          <label htmlFor="message" className="mb-2 text-left font-medium text-gray-700">
+            Message <span className="text-red-500">*</span>
+          </label>
           <textarea
             id="message"
             name="message"
             required
-            className="border rounded px-3 py-2 resize-none"
+            className="border-2 border-gray-300 rounded-md px-4 py-3 text-gray-800 placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-colors resize-none"
             placeholder="What can I do for you?"
-            rows={5}
+            rows={6}
           />
         </div>
 
         {/* Send Button */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-4">
           <button
             type="submit"
-            className="bg-white text-black rounded px-6 py-2 font-semibold hover:bg-green-500 hover:text-white transition-colors duration-200"
+            className="px-8 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold rounded-md shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={status === "sending"}
           >
-            {status === "sending" ? "Sending..." : "Send"}
+            {status === "sending" ? "Sending..." : "Send Message"}
           </button>
         </div>
 
         {/* Status Messages */}
-        {/* TODO: this implementation for the message status can be improved */}
-        <div className="flex justify-center">
-          {status === "sent" && <p className="text-green-600">Message sent!</p>}
-          {status === "rate-limited" && <p className="text-red-600">Rate limited. Please wait.</p>}
-          {status === "error" && <p className="text-red-600">Something went wrong.</p>}
+        <div className="flex justify-center mt-4">
+          {status === "sent" && (
+            <div className="px-4 py-2 bg-green-100 text-green-700 rounded-md border border-green-300">
+              Message sent successfully! I'll get back to you soon.
+            </div>
+          )}
+          {status === "rate-limited" && (
+            <div className="px-4 py-2 bg-red-100 text-red-700 rounded-md border border-red-300">
+              Too many requests. Please wait a moment before trying again.
+            </div>
+          )}
+          {status === "error" && (
+            <div className="px-4 py-2 bg-red-100 text-red-700 rounded-md border border-red-300">
+              Something went wrong. Please try again later.
+            </div>
+          )}
         </div>
       </form>
     </div>

@@ -1,40 +1,43 @@
-import Navbar from "@/components/Navbar";
 import IntroBlurb from "@/components/IntroBlurb";
-import Timeline from "@/components/Timeline";
-import ContactMe from "@/components/ContactMe";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AnimatedGreetingSection from "@/components/AnimatedGreetingSection";
 
 export default function Home() {
   return (
     <>
-      {/* Header w/ Navbar Only */}
-      <header className="pt-6 bg-pp-blue">
-        <Navbar />
-      </header>
+      {/* Navbar Only, on every page */}
+      <Navbar />
 
-      {/* Introduction Blurb and Bio */}
-      {/* Gradient to Black or PP-Black??? */}
-      <section className="min-h-[calc(100vh-6rem)] flex items-center justify-center bg-gradient-to-b from-pp-blue to-pp-black"> 
-        {/* */}
-        <IntroBlurb />
-      </section>
+      {/* Greeting Section with Animated SVG Background */}
+      <AnimatedGreetingSection />
 
-      {/* Projects/Work Timeline */}
-      {/* Gradient FROM previous ending color to chosen timeline color */}      
-      <Timeline />
-
-      {/* Contact Information Fill */}
-      <section id="contact" className="py-12 bg-pp-black">
-        <ContactMe />
-        {/* TODO: potentially add social icons with links to pages like the navbar */}
-        {/* TODO: it could say "Alternatively," then the icons below them */}
-      </section>
-
-      {/* Footer w/ Copyright and Year Only */}
-      <footer className="text-left text-gray-400 py-8 bg-pp-black">
+      {/* About Me Section */}
+      <section className="h-screen bg-gray-100 flex items-center justify-center">
         <div className="trimmed-container">
-          &copy; {new Date().getFullYear()} Peter Pulcini
+          <IntroBlurb />
         </div>
-      </footer>
+      </section>
+
+      {/* Copyright Only, on every page */}
+      <Footer bgColor="bg-gray-100" />
     </>
   );
 }
+
+      // <section id="contact" className="py-12 bg-pp-black">
+      //   <ContactMe />
+      //   {/* TODO: potentially add social icons with links to pages like the navbar */}
+      //   {/* TODO: it could say "Alternatively," then the icons below them */}
+      // </section>
+      // {/* Projects/Work Timeline */}
+      // {/* Gradient FROM previous ending color to chosen timeline color */}      
+      // <Timeline />
+      //       {/* Introduction Blurb and Bio */}
+      // {/* Gradient to Black or PP-Black??? */}
+      // <section className="min-h-[calc(100vh-6rem)] flex items-center justify-center"> 
+      // </section>
+
+
+
+      // MAKE SURE THE SCROLL BARS ARE THE SAME COLOR

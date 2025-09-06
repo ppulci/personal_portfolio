@@ -3,13 +3,13 @@ import { useState } from "react";
 
 // Projects and their creation years
 const timeline = [
-  { year: 2021, projects: ["The Grate Escape!"], gradient: "to-orange-300" },
-  { year: 2022, projects: ["Deepslate Tweaks"], gradient: "to-slate-200" },
-  { year: 2023, projects: ["R3 Plastic"], gradient: "to-green-700" },
-  { year: 2023, projects: ["Lab2Client"], gradient: "to-blue-300" },
-  { year: 2024, projects: ["TENAMINT"], gradient: "to-indigo-500" },
-  { year: 2025, projects: ["Chrollo, Playable Character"], gradient: "to-orange-400" },
-  { year: 2025, projects: ["Personal Portfolio"], gradient: "to-pp-blue" },
+  { year: 2021, projects: ["The Grate Escape!"], gradient: "bg-gradient-to-b from-pp-black to-orange-300" },
+  { year: 2022, projects: ["Deepslate Tweaks"], gradient: "bg-gradient-to-b from-pp-black to-slate-200" },
+  { year: 2023, projects: ["R3 Plastic"], gradient: "bg-gradient-to-b from-pp-black to-green-700" },
+  { year: 2023, projects: ["Lab2Client"], gradient: "bg-gradient-to-b from-pp-black to-blue-300" },
+  { year: 2024, projects: ["TENAMINT"], gradient: "bg-gradient-to-b from-pp-black to-indigo-500" },
+  { year: 2025, projects: ["Chrollo, Playable Character"], gradient: "bg-gradient-to-b from-pp-black to-orange-400" },
+  { year: 2025, projects: ["Personal Portfolio"], gradient: "bg-gradient-to-b from-pp-black to-pp-blue" },
 ];
 
 export default function Timeline() {
@@ -61,14 +61,14 @@ export default function Timeline() {
       </section>
 
       {/* Project Info and Gradient */}
-      <section className={`min-h-screen flex items-center justify-center py-0 bg-gradient-to-b from-pp-black ${timeline[current].gradient}`}>
+      <section className={`min-h-screen flex items-center justify-center py-0 ${timeline[current].gradient}`}>
         <div className="text-center">
           <h2 className="text-xl font-semibold mb-2">
             Projects in {timeline[current].year}
           </h2>
           <ul className="space-y-2">
             {timeline[current].projects.map((project) => (
-              <li key={project} className="bg-gray-100 rounded p-2">
+              <li key={project} className="bg-pp-black rounded p-2">
                 {project}
               </li>
             ))}
