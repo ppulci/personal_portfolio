@@ -36,19 +36,19 @@ const greetings = [
     pauseAfter: 3000,
     deleteSpeed: 1000,
   },
-  {
-    // "Howdy 🤠"
-    letters: [
-      { char: "H", speed: 100 },
-      { char: "o", speed: 80 },
-      { char: "w", speed: 90 },
-      { char: "d", speed: 70 },
-      { char: "y ", speed: 2000 },
-      { char: "🤠", speed: 1000, isEmoji: true, animation: "jump" },
-    ],
-    pauseAfter: 2500,
-    deleteSpeed: 900,
-  },
+  // {
+  //   // "Howdy 🤠"
+  //   letters: [
+  //     { char: "H", speed: 100 },
+  //     { char: "o", speed: 80 },
+  //     { char: "w", speed: 90 },
+  //     { char: "d", speed: 70 },
+  //     { char: "y ", speed: 2000 },
+  //     { char: "🤠", speed: 1000, isEmoji: true, animation: "jump" },
+  //   ],
+  //   pauseAfter: 2500,
+  //   deleteSpeed: 900,
+  // },
   {
     // "Sup ✌️"
     letters: [
@@ -72,7 +72,7 @@ const greetings = [
     deleteSpeed: 900,
   },
   {
-    // "Knock Knock 🫣"
+    // "Knock Knock ✊"
     letters: [
       { char: "K", speed: 100 },
       { char: "n", speed: 70 },
@@ -86,7 +86,7 @@ const greetings = [
       { char: "k ", speed: 70 },
       { char: "✊", speed: 1000, isEmoji: true, animation: "knock" },
     ],
-    pauseAfter: 1000,
+    pauseAfter: 1200,
     deleteSpeed: 1000,
   },
   {
