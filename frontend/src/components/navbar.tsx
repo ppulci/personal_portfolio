@@ -2,63 +2,91 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Experience", href: "/experience" },
-    { name: "Projects", href: "/projects" }
+    { name: "Experience", href: "/#experience" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-xl border-b-4 border-gray-300 shadow-lg">
-      <nav className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
-          {/* Left: Logo Image */}
-          <div className="flex-shrink-0">
-            <Link href="/">
-              <Image
-                src="/jake_dog.png"
-                alt="Peter Pulcini Logo"
-                width={40}
-                height={40}
-                className="object-cover rounded-md"
-              />
-            </Link>
-          </div>
+    <header className="w-full flex justify-center fixed top-0 left-0 z-50 pointer-events-auto">
+      <nav
+        className="
+          w-[70vw] max-w-5xl
+          bg-white/70
+          backdrop-blur-xl
+          rounded-2xl
+          shadow-lg
+          border border-gray-200
+          px-8 py-2
+          flex items-center
+          mt-6
+        "
+      >
+        {/* Left: Logo */}
+        <div className="flex-shrink-0 flex items-center mr-8">
+          <Image
+            src="/temp_image.png"
+            alt="Peter Pulcini Logo"
+            width={40}
+            height={40}
+            className="object-cover rounded-lg"
+          />
+        </div>
 
-          {/* Center: Navigation Links */}
-          <div className="flex space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`relative px-5 py-2 text-base font-semibold rounded-xl transition-all duration-300 border ${
-                  pathname === item.href
-                    ? "bg-slate-600 text-white border-slate-600"
-                    : "text-gray-700 bg-gray-200 border-gray-200 hover:bg-gray-300 hover:text-slate-900"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+        {/* Center: Navigation Links */}
+        <div className="flex-1 flex justify-center">
+          <div className="flex space-x-6">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`
+                    px-4 py-1.5 rounded-lg text-base font-medium transition-colors relative
+                    ${
+                      isActive
+                        ? "text-slate-900 font-bold opacity-100"
+                        : "text-slate-400 opacity-100 hover:opacity-100 hover:text-slate-700"
+                    }
+                    after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-slate-700 after:rounded-full after:transition-all after:duration-300
+                    hover:after:w-6
+                  `}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
+        </div>
 
-          {/* Right: Contact Button (Accent Color) */}
-          <div className="flex-shrink-0">
-            <Link
-              href="/contact"
-              className={`relative px-5 py-2 text-base font-semibold rounded-xl transition-all duration-300 border ${
-                pathname === "/contact"
-                  ? "bg-yellow-500 text-white border-yellow-500"
-                  : "bg-yellow-400 text-gray-800 border-yellow-400 hover:bg-yellow-500 hover:text-gray-900"
-              }`}
-            >
-              Contact
-            </Link>
-          </div>
+        {/* Right: Social Links */}
+        <div className="flex items-center space-x-4 ml-8">
+          <a
+            href="https://github.com/ppulci"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-700 hover:text-slate-900 transition-colors text-xl"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/peter-pulcini/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-700 hover:text-slate-900 transition-colors text-xl"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
         </div>
       </nav>
     </header>

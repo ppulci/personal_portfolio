@@ -25,30 +25,16 @@ const greetings = [
       { char: "e", speed: 40 },
       { char: "y", speed: 120 },
       { char: " ", speed: 80 },
-      { char: "T", speed: 90 },
+      { char: "t", speed: 90 },
       { char: "h", speed: 80 },
       { char: "e", speed: 60 },
       { char: "r", speed: 70 },
-      { char: "e", speed: 50 },
-      { char: "! ", speed: 60 },
+      { char: "e ", speed: 50 },
       { char: "👋", speed: 1000, isEmoji: true, animation: "wave right" },
     ],
     pauseAfter: 3000,
     deleteSpeed: 1000,
   },
-  // {
-  //   // "Howdy 🤠"
-  //   letters: [
-  //     { char: "H", speed: 100 },
-  //     { char: "o", speed: 80 },
-  //     { char: "w", speed: 90 },
-  //     { char: "d", speed: 70 },
-  //     { char: "y ", speed: 2000 },
-  //     { char: "🤠", speed: 1000, isEmoji: true, animation: "jump" },
-  //   ],
-  //   pauseAfter: 2500,
-  //   deleteSpeed: 900,
-  // },
   {
     // "Sup ✌️"
     letters: [
@@ -72,6 +58,19 @@ const greetings = [
     deleteSpeed: 900,
   },
   {
+    // "Howdy 🤠"
+    letters: [
+      { char: "H", speed: 100 },
+      { char: "o", speed: 80 },
+      { char: "w", speed: 90 },
+      { char: "d", speed: 70 },
+      { char: "y ", speed: 2000 },
+      { char: "🤠", speed: 1000, isEmoji: true, animation: "jump" },
+    ],
+    pauseAfter: 2500,
+    deleteSpeed: 900,
+  },
+  {
     // "Knock Knock ✊"
     letters: [
       { char: "K", speed: 100 },
@@ -90,6 +89,26 @@ const greetings = [
     deleteSpeed: 1000,
   },
   {
+    // "Umm Actually 🤓☝️"
+    letters: [
+      { char: "U", speed: 200 },
+      { char: "m", speed: 70 },
+      { char: "m", speed: 70 },
+      { char: " ", speed: 70 },
+      { char: "a", speed: 200 },
+      { char: "c", speed: 70 },
+      { char: "t", speed: 70 },
+      { char: "u", speed: 70 },
+      { char: "a", speed: 70 },
+      { char: "l", speed: 70 },
+      { char: "l", speed: 70 },
+      { char: "y ", speed: 70 },
+      { char: "🤓☝️", speed: 1000, isEmoji: true, animation: "nerd" },
+    ],
+    pauseAfter: 2500,
+    deleteSpeed: 900,
+  },
+  {
     // "... still here 👀"
     letters: [
       { char: ".", speed: 300 },
@@ -104,8 +123,8 @@ const greetings = [
       { char: "h", speed: 100 },
       { char: "e", speed: 80 },
       { char: "r", speed: 60 },
-      { char: "e", speed: 70 },
-      { char: "? ", speed: 70 },
+      { char: "e ", speed: 70 },
+      // { char: "? ", speed: 70 },
       { char: "👀", speed: 1000, isEmoji: true, animation: "stare" },
     ],
     pauseAfter: 3500,
@@ -115,7 +134,7 @@ const greetings = [
 
 export default function GreetingMessage() {
   return (
-    <div className="text-6xl font-bold">
+    <div className="text-8xl font-bold">
       <TypeIt
         options={{
           loop: true,

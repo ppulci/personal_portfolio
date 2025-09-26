@@ -54,24 +54,28 @@ body {
   }
 }
 
+
+
 /* Animations */
 .emoji {
   display: inline-block;
 }
 
+/* from tailwind code, aka animate-bounce*/
 @keyframes jump {
-  0%,
-  100% {
-    transform: translateY(0);
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
-    transform: translateY(-10px);
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
 .jump {
   animation: jump 0.5s infinite;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
   animation-fill-mode: backwards;
 }
 
@@ -109,7 +113,7 @@ body {
 
 .wave.right {
   animation: wave 0.6s infinite;
-  animation-delay: 0.5s;
+  animation-delay: 0.2s;
   animation-fill-mode: backwards;
   transform-origin: bottom right;
 }
@@ -166,5 +170,20 @@ body {
 .knock {
   animation: knock 0.3s 3;
   animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes nerd {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nerd {
+  animation: nerd 1s;
+  animation-delay: 0.2s;
   animation-fill-mode: backwards;
 }

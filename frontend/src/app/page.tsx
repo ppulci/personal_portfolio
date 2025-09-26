@@ -1,7 +1,9 @@
-import IntroBlurb from "@/components/IntroBlurb";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedGreetingSection from "@/components/AnimatedGreetingSection";
+import SideLabelSection from "@/components/SideLabelSection";
+import IntroBlurb from "@/components/IntroBlurb";
+import TechnologyShowcase from "@/components/TechnologyShowcase";
 
 export default function Home() {
   return (
@@ -13,9 +15,31 @@ export default function Home() {
       <AnimatedGreetingSection />
 
       {/* About Me Section */}
-      <section className="h-screen bg-gray-100 flex items-center justify-center">
-        <div className="trimmed-container">
-          <IntroBlurb />
+      <section className="relative min-h-screen bg-gray-100 overflow-hidden">
+        <div className="relative mx-auto w-full max-w-[80rem] px-6 py-16 space-y-24">
+          {/* Bio */}
+          <SideLabelSection id="bio" label="about">
+            <IntroBlurb />
+          </SideLabelSection>
+
+          {/* Tech Stack */}
+          <SideLabelSection id="stack" label="stack" className="scroll-mt-28">
+            <TechnologyShowcase />
+          </SideLabelSection>
+
+          {/* Experience */}
+          <SideLabelSection id="experience" label="experience" className="scroll-mt-28">
+            <>This is the experience section.</>
+          </SideLabelSection>
+
+          {/* Projects */}
+          <SideLabelSection id="projects" label="projects" className="scroll-mt-28">
+            <>This is the projects section.</>
+          </SideLabelSection>
+
+          <div>
+            Like what you see? Lets connect!
+          </div>
         </div>
       </section>
 
@@ -24,20 +48,3 @@ export default function Home() {
     </>
   );
 }
-
-      // <section id="contact" className="py-12 bg-pp-black">
-      //   <ContactMe />
-      //   {/* TODO: potentially add social icons with links to pages like the navbar */}
-      //   {/* TODO: it could say "Alternatively," then the icons below them */}
-      // </section>
-      // {/* Projects/Work Timeline */}
-      // {/* Gradient FROM previous ending color to chosen timeline color */}      
-      // <Timeline />
-      //       {/* Introduction Blurb and Bio */}
-      // {/* Gradient to Black or PP-Black??? */}
-      // <section className="min-h-[calc(100vh-6rem)] flex items-center justify-center"> 
-      // </section>
-
-
-
-      // MAKE SURE THE SCROLL BARS ARE THE SAME COLOR

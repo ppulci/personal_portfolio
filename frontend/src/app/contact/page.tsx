@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import ContactMe from "@/components/ContactMe";
+import ContactMe from "@/components/ContactMeForm";
 import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
 
