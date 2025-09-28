@@ -68,17 +68,17 @@ export default function TechnologyShowcase() {
     title: string,
     items: { name: string; Icon: any; color: string }[]
   ) {
-    const sorted = items
-      .slice()
-      .sort((a, b) => a.name.localeCompare(b.name));
+    const sorted = items.slice().sort((a, b) => a.name.localeCompare(b.name));
     return (
       <div className="mb-12">
         <h2 className="text-2xl font-bold mb-4 text-center uppercase">
           {title}
         </h2>
+
+        {/* CENTERED, WRAPPING LIST: use flex so partial rows are centered */}
         <ul
           role="list"
-          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 text-center "
+          className="flex flex-wrap justify-center gap-6 text-center"
         >
           {sorted.map(({ name, Icon, color }) => (
             <li key={name} className="flex flex-col items-center">
@@ -101,8 +101,18 @@ export default function TechnologyShowcase() {
   return (
     <>
       {renderCategory("Front End", frontendItems)}
-      {renderCategory("Back End", backendItems)}
-      {renderCategory("Database", databaseItems)}
+
+      {/* Back End and Database shown side-by-side and top-aligned */}
+      <div className="flex flex-row flex-wrap justify-center items-start gap-24">
+        <div className="w-full sm:w-[20rem]">
+          {renderCategory("Back End", backendItems)}
+        </div>
+
+        <div className="w-full sm:w-[20rem]">
+          {renderCategory("Database", databaseItems)}
+        </div>
+      </div>
+
       {renderCategory("Tools", toolsItems)}
     </>
   );

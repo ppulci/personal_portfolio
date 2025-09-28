@@ -4,6 +4,7 @@ import AnimatedGreetingSection from "@/components/AnimatedGreetingSection";
 import SideLabelSection from "@/components/SideLabelSection";
 import IntroBlurb from "@/components/IntroBlurb";
 import TechnologyShowcase from "@/components/TechnologyShowcase";
+import EmblaCarousel from "@/components/EmblaCarousel";
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
 
           {/* Experience */}
           <SideLabelSection id="experience" label="experience" className="scroll-mt-28">
-            <>This is the experience section.</>
+            <EmblaCarousel slides={[]} />
           </SideLabelSection>
 
           {/* Projects */}
