@@ -66,7 +66,8 @@ export default function AnimatedGreetingSection() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-slate-400 animate-bounce"
+            className="text-slate-800 w-12 h-12 transform origin-center animate-bounce"
+            aria-hidden="true"
           >
             <polyline points="6 9 12 15 18 9" />
           </svg>

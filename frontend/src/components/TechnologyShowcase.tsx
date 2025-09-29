@@ -75,7 +75,6 @@ export default function TechnologyShowcase() {
           {title}
         </h2>
 
-        {/* CENTERED, WRAPPING LIST: use flex so partial rows are centered */}
         <ul
           role="list"
           className="flex flex-wrap justify-center gap-6 text-center"
@@ -90,7 +89,7 @@ export default function TechnologyShowcase() {
                 <Icon className={`text-4xl ${color}`} aria-hidden="true" />
               </div>
 
-              <span className="mt-2 text-xs text-center">{name}</span>
+              <span className="mt-2 text-s text-center">{name}</span>
             </li>
           ))}
         </ul>

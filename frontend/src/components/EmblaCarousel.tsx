@@ -5,13 +5,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { EmblaOptionsType, EmblaCarouselType } from "embla-carousel";
 
-/*
-  Single-file Embla carousel:
-  - Includes Dot buttons, Prev/Next buttons, hooks and the main EmblaCarousel component.
-  - Pass `slides` as an array of React nodes (each slide's content).
-  - The file assumes you will provide CSS for the .embla* classes or adapt to Tailwind classes.
-*/
-
 type UseDotButtonType = {
   selectedIndex: number;
   scrollSnaps: number[];
@@ -151,11 +144,12 @@ export const NextButton: React.FC<BtnPropType> = (props) => {
 type EmblaCarouselProps = {
   slides: React.ReactNode[]; // slide contents
   options?: EmblaOptionsType;
+  autoplayOptions?: { delay?: number; stopOnInteraction?: boolean; stopOnMouseEnter?: boolean };
 };
 
-const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options }) => {
-  // include Autoplay plugin instance in second arg
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options, autoplayOptions }) => {
+  // include Autoplay plugin instance in second arg — pass config here (delay in ms)
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay(autoplayOptions)]);
 
   const onNavButtonClick = useCallback((api: EmblaCarouselType) => {
     const autoplay = api?.plugins()?.autoplay;
@@ -171,32 +165,44 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options }) => {
   );
 
   return (
-    <section className="embla">
-      <div className="embla__viewport overflow-hidden" ref={emblaRef as any}>
-        <div className="embla__container flex gap-6">
-          {slides.map((slide, index) => (
-            <div className="embla__slide shrink-0 min-w-[18rem] max-w-xs" key={index}>
-              <div className="embla__slide__inner">{slide}</div>
+    <section className="embla w-full h-full flex flex-col">
+      {/* viewport (flex-grow fills available space above controls) */}
+      <div className="embla__viewport flex-grow overflow-hidden" ref={emblaRef as any}>
+        {/* force horizontal no-wrap and full-height slides */}
+        <div className="embla__container flex flex-nowrap gap-6 h-full">
+          {slides.flat().map((slide, index) => (
+            // each slide is full viewport width and full height so slides sit side-by-side horizontally
+            <div className="embla__slide flex-none min-w-full h-full" key={index}>
+              <div className="embla__slide__inner h-full flex items-center justify-center">{slide}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="embla__controls mt-4 flex items-center justify-center gap-4">
-        <div className="embla__buttons flex gap-2">
+      {/* controls area (bottom 10%): left arrow, centered dots, right arrow */}
+      <div className="h-[10%] flex items-center justify-center px-4 mt-3">
+        {/* left / prev */}
+        <div className="flex items-center">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
 
-        <div className="embla__dots flex gap-2">
-          {scrollSnaps.map((_, index) => (
-            <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={`embla__dot h-2 w-8 rounded-full transition-colors ${index === selectedIndex ? "embla__dot--selected bg-slate-800" : "bg-slate-300"}`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+        {/* dots centered */}
+        <div className="flex justify-center mx-10">
+          <div className="embla__dots flex gap-2">
+            {scrollSnaps.map((_, index) => (
+              <DotButton
+                key={index}
+                onClick={() => onDotButtonClick(index)}
+                className={`embla__dot h-2 w-8 rounded-full transition-colors ${index === selectedIndex ? "embla__dot--selected bg-slate-800" : "bg-slate-300"}`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* right / next */}
+        <div className="flex items-center">
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
     </section>
