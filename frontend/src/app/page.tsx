@@ -39,7 +39,7 @@ export default function Home() {
             <EmblaCarousel slides={PROJECT_SLIDES} />
           </SideLabelSection>
 
-          <div>
+          <div className="text-center text-4xl px-4">
             Like what you see? Lets connect!
           </div>
         </div>
