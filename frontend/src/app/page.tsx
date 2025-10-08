@@ -18,26 +18,25 @@ export default function Home() {
 
       {/* About Me Section */}
       <section className="relative min-h-screen bg-gray-100 overflow-hidden">
-        <div className="relative mx-auto w-full max-w-[80rem] px-6 py-16 space-y-24">
+        <div className="relative mx-auto w-full max-w-[80rem] my-16 space-y-28">
           {/* Bio */}
           <SideLabelSection id="bio" label="about">
             <IntroBlurb />
           </SideLabelSection>
 
           {/* Tech Stack */}
-          <SideLabelSection id="stack" label="stack" className="scroll-mt-28">
+          <SideLabelSection id="stack" label="stack">
             <TechnologyShowcase />
           </SideLabelSection>
 
           {/* Experience */}
-          <SideLabelSection id="experience" label="experience" className="scroll-mt-28">
+          <SideLabelSection id="experience" label="experience" className="scroll-mt-16">
             <EmblaCarousel slides={EXPERIENCE_SLIDES} />
           </SideLabelSection>
 
           {/* Projects */}
-          <SideLabelSection id="projects" label="projects" className="scroll-mt-28">
+          <SideLabelSection id="projects" label="projects" className="scroll-mt-16">
             <EmblaCarousel slides={PROJECT_SLIDES} />
-            <p>Check out my Github for more!</p>
           </SideLabelSection>
 
           <div>

@@ -19,8 +19,8 @@ import {
   SiGo,
   SiFramer,
   SiPostman,
-  SiGraphql,
-  SiPostgresql,
+  // SiGraphql,
+  // SiPostgresql,
 } from "react-icons/si";
 
 export default function TechnologyShowcase() {
@@ -82,14 +82,14 @@ export default function TechnologyShowcase() {
           {sorted.map(({ name, Icon, color }) => (
             <li key={name} className="flex flex-col items-center">
               <div
-                className={`w-14 h-14 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center transition-transform transform hover:scale-105`}
+                className={`w-14 h-14 rounded-full mx-3 bg-white border border-slate-200 shadow-sm flex items-center justify-center transition-transform transform hover:scale-105`}
                 aria-hidden="true"
                 title={name}
               >
                 <Icon className={`text-4xl ${color}`} aria-hidden="true" />
               </div>
 
-              <span className="mt-2 text-s text-center">{name}</span>
+              <span className="mt-2 text-sm text-center">{name}</span>
             </li>
           ))}
         </ul>

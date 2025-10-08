@@ -35,7 +35,7 @@ export default function ContactMe() {
         Reach <span className="text-yellow-500">Out</span>
       </h2>
       <p className="text-gray-600 text-center mb-10 max-w-2xl">
-        Interested in what I'm building? Let's connect and see how we can collaborate.
+        Interested in what I&apos;m building? Let&apos;s connect and see how we can collaborate.
       </p>
 
       <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-6">
@@ -98,7 +98,7 @@ export default function ContactMe() {
         <div className="flex justify-center mt-4">
           {status === "sent" && (
             <div className="px-4 py-2 bg-green-100 text-green-700 rounded-md border border-green-300">
-              Message sent successfully! I'll get back to you soon.
+              Message sent successfully! I&apos;ll get back to you soon.
             </div>
           )}
           {status === "rate-limited" && (

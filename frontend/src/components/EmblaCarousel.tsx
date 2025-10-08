@@ -145,9 +145,13 @@ type EmblaCarouselProps = {
   slides: React.ReactNode[]; // slide contents
   options?: EmblaOptionsType;
   autoplayOptions?: { delay?: number; stopOnInteraction?: boolean; stopOnMouseEnter?: boolean };
+  // Tailwind max-height class (e.g. "max-h-[80vh]" or "h-[70vh]" ). Defaults to viewport-based limit.
+  maxHeight?: string;
+  // Tailwind min-height class (e.g. "min-h-[60vh]" or "h-[70vh]" ). Defaults to viewport-based limit.
+  minHeight?: string;
 };
 
-const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options, autoplayOptions }) => {
+const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options, autoplayOptions, maxHeight = "max-h-[45rem]", minHeight = "min-h-[45rem]" }) => {
   // include Autoplay plugin instance in second arg — pass config here (delay in ms)
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay(autoplayOptions)]);
 
@@ -165,22 +169,25 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options, autoplay
   );
 
   return (
-    <section className="embla w-full h-full flex flex-col">
+    // constrain overall carousel height so it stays within one screen
+    <div className={`embla w-full h-full flex flex-col ${maxHeight} ${minHeight}`}>
       {/* viewport (flex-grow fills available space above controls) */}
       <div className="embla__viewport flex-grow overflow-hidden" ref={emblaRef as any}>
-        {/* force horizontal no-wrap and full-height slides */}
+        {/* horizontal, no-wrap container; slides sized to exact width and height of viewport area */}
         <div className="embla__container flex flex-nowrap gap-6 h-full">
           {slides.flat().map((slide, index) => (
-            // each slide is full viewport width and full height so slides sit side-by-side horizontally
-            <div className="embla__slide flex-none min-w-full h-full" key={index}>
-              <div className="embla__slide__inner h-full flex items-center justify-center">{slide}</div>
+            <div className="embla__slide flex-none w-full h-full box-border" key={index}>
+              {/* inner: center content, but allow internal scroll if content is taller than this area */}
+              <div className="embla__slide__inner h-full flex items-start justify-center overflow-auto box-border">
+                {slide}
+              </div>
             </div>
           ))}
         </div>
       </div>
 
       {/* controls area (bottom 10%): left arrow, centered dots, right arrow */}
-      <div className="h-[10%] flex items-center justify-center px-4 mt-3">
+      <div className="h-[10%] flex items-center justify-center px-4">
         {/* left / prev */}
         <div className="flex items-center">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
@@ -205,7 +212,7 @@ const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ slides, options, autoplay
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
