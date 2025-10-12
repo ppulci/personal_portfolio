@@ -4,8 +4,10 @@ import AnimatedGreetingSection from "@/components/AnimatedGreetingSection";
 import SideLabelSection from "@/components/SideLabelSection";
 import IntroBlurb from "@/components/IntroBlurb";
 import TechnologyShowcase from "@/components/TechnologyShowcase";
-import EmblaCarousel from "@/components/EmblaCarousel";
-import { EXPERIENCE_SLIDES, PROJECT_SLIDES } from "@/components/SlideshowPanels";
+import EmblaCarousel from "@/components/carousel/EmblaCarousel";
+import ExperienceSlides from '@/components/carousel/slides/ExperienceSlides'
+import ProjectSlides from "@/components/carousel/slides/ProjectSlides";
+
 
 export default function Home() {
   return (
@@ -31,13 +33,12 @@ export default function Home() {
 
           {/* Experience */}
           <SideLabelSection id="experience" label="experience" className="scroll-mt-16">
-            <EmblaCarousel slides={EXPERIENCE_SLIDES} />
+            <EmblaCarousel slides={ExperienceSlides} />
           </SideLabelSection>
 
           {/* Projects */}
           <SideLabelSection id="projects" label="projects" className="scroll-mt-16">
-            <EmblaCarousel slides={PROJECT_SLIDES} />
-            <p className="text-center text-2xl mt-4">Check out my Github for more!</p>
+            <EmblaCarousel slides={ProjectSlides} />
           </SideLabelSection>
         </div>
       </section>

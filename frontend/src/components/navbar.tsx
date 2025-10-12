@@ -18,7 +18,7 @@ export default function Navbar() {
     <header className="w-full flex justify-center fixed top-0 left-0 z-50 pointer-events-auto">
       <nav
         className="
-          w-[70vw] max-w-5xl
+          w-[70vw] max-w-6xl
           bg-white/70
           backdrop-blur-xl
           rounded-2xl

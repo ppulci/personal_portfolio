@@ -192,7 +192,6 @@ export const EXPERIENCE_SLIDES = [
         </div>
       </div>
     </div>
-
     <div className="flex bg-white rounded-xl shadow-lg overflow-hidden h-full">
       {/* Left Section (70%) */}
       <div className="flex flex-col justify-center gap-3 basis-[70%] px-10 py-8">
@@ -255,8 +254,6 @@ export const EXPERIENCE_SLIDES = [
     </div>
   </article>,
 ];
-
-
 
 
 
@@ -334,6 +331,7 @@ export const PROJECT_SLIDES = [
       </div>
     </div>
   </article>,
+
   <article
     key="proj-2"
     className="flex flex-col rounded-xl h-full overflow-hidden bg-white p-10"
@@ -487,11 +485,7 @@ export const PROJECT_SLIDES = [
         {/* Technologies */}
         <div className="flex flex-wrap gap-4 mb-8">
           {[
-            "React",
-            "Next.js",
-            "TailwindCSS",
-            "Framer Motion",
-            "TypeScript",
+            "React","Next.js","TailwindCSS","Framer Motion","TypeScript",
           ].map((tech) => (
             <span
               key={tech}
@@ -527,3 +521,4 @@ export const PROJECT_SLIDES = [
     </div>
   </article>,
 ];
+
