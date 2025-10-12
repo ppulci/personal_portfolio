@@ -4,30 +4,215 @@ export const EXPERIENCE_SLIDES = [
   /* Panel 1: Software Experience (two separated sub-slides) */
   <article
     key="panel-software"
-    className="rounded-xl h-full w-full flex flex-col gap-8 overflow-hidden"
+    className="flex flex-col rounded-xl h-full w-full overflow-hidden gap-8"
   >
-    {/* #############################################################
-    ################################################################# */}
-    <div className="flex bg-white rounded-xl shadow-lg overflow-hidden h-[500px] w-full">
+    <div className="flex bg-white rounded-xl shadow-lg overflow-hidden h-full">
       {/* Left Section (70%) */}
       <div className="flex flex-col justify-center gap-3 basis-[70%] px-10 py-8">
         <h3 className="text-xl font-semibold text-slate-900">
-          Senior Software Engineer
+          Software Developer Intern
         </h3>
-        <div className="text-slate-600 text-sm">Acme Tech • Remote</div>
-        <div className="text-slate-500 text-xs">Jan 2022 — Present</div>
+
+        <div className="text-slate-600 text-sm">
+          TENAMINT
+          <span className="pl-6">Sept. 2024 — May 2025</span>
+        </div>
 
         {/* Job description paragraph */}
         <p className="mt-3 text-slate-700 text-sm leading-relaxed">
-          Architected and maintained a realtime analytics dashboard using React
-          and TypeScript, implementing scalable CI/CD pipelines and improving
-          release efficiency by 40%. Mentored junior engineers and led front-end
-          refactors to enhance maintainability and accessibility.
+          Description.
         </p>
 
         {/* Technologies used */}
         <div className="mt-4 flex flex-wrap gap-2">
-          {["React", "TypeScript", "Node.js", "CI/CD", "AWS"].map((tech) => (
+          {["React"].map((tech) => (
+            <span
+              key={tech}
+              className="bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full border border-slate-200"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Right Section (30%) */}
+      <div className="relative basis-[30%]">
+        {/* Full-section image */}
+        <Image
+          src="/tenamint_logo.jpg"
+          alt="Company Logo"
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Overlay link */}
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
+          <div
+            className="absolute top-0 left-0 z-10 ml-2 mt-2 font-bold text-2xl text-white hover:animate-pulse"
+            title="Logos and trademarks are property of their respective owners and are used for identification purposes only!"
+          >
+            &#9432;
+          </div>
+          <a
+            href="https://tenamint.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-sm font-medium hover:underline"
+          >
+            Visit Website →
+          </a>
+        </div>
+      </div>
+    </div>
+    <div className="flex bg-white rounded-xl shadow-lg overflow-hidden h-full">
+      {/* Left Section (70%) */}
+      <div className="flex flex-col justify-center gap-3 basis-[70%] px-10 py-8">
+        <h3 className="text-xl font-semibold text-slate-900">
+          Software Developer Intern
+        </h3>
+
+        <div className="text-slate-600 text-sm">
+          Lab2Client
+          <span className="pl-6">Sept. 2023 — Dec. 2023</span>
+        </div>
+
+        {/* Job description paragraph */}
+        <p className="mt-3 text-slate-700 text-sm leading-relaxed">
+          Description.
+        </p>
+
+        {/* Technologies used */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {["React"].map((tech) => (
+            <span
+              key={tech}
+              className="bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full border border-slate-200"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Right Section (30%) */}
+      <div className="relative basis-[30%]">
+        {/* Full-section image */}
+        <Image
+          src="/lab2client_logo.png"
+          alt="Company Logo"
+          width={400}
+          height={400}
+          className="object-contain mt-20"
+          priority
+        />
+
+        {/* Overlay link */}
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
+          <div
+            className="absolute top-0 left-0 z-10 ml-2 mt-2 font-bold text-2xl text-white hover:animate-pulse"
+            title="Logos and trademarks are property of their respective owners and are used for identification purposes only!"
+          >
+            &#9432;
+          </div>
+          <a
+            href="https://www.lab2client.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-sm font-medium hover:underline"
+          >
+            Visit Website →
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>,
+  <article
+    key="panel-retail"
+    className="flex flex-col rounded-xl h-full w-full overflow-hidden gap-8 "
+  >
+    <div className="flex bg-white rounded-xl shadow-lg overflow-hidden h-full">
+      {/* Left Section (70%) */}
+      <div className="flex flex-col justify-center gap-3 basis-[70%] px-10 py-8">
+        <h3 className="text-xl font-semibold text-slate-900">
+          Software Developer Intern
+        </h3>
+
+        <div className="text-slate-600 text-sm">
+          TENAMINT
+          <span className="pl-6">Sept. 2024 — May 2025</span>
+        </div>
+
+        {/* Job description paragraph */}
+        <p className="mt-3 text-slate-700 text-sm leading-relaxed">
+          Description.
+        </p>
+
+        {/* Technologies used */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {["React"].map((tech) => (
+            <span
+              key={tech}
+              className="bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full border border-slate-200"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Right Section (30%) */}
+      <div className="relative basis-[30%]">
+        {/* Full-section image */}
+        <Image
+          src="/tenamint_logo.jpg"
+          alt="Company Logo"
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Overlay link */}
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
+          <div
+            className="absolute top-0 left-0 z-10 ml-2 mt-2 font-bold text-2xl text-white hover:animate-pulse"
+            title="Logos and trademarks are property of their respective owners and are used for identification purposes only!"
+          >
+            &#9432;
+          </div>
+          <a
+            href="https://tenamint.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-sm font-medium hover:underline"
+          >
+            Visit Website →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div className="flex bg-white rounded-xl shadow-lg overflow-hidden h-full">
+      {/* Left Section (70%) */}
+      <div className="flex flex-col justify-center gap-3 basis-[70%] px-10 py-8">
+        <h3 className="text-xl font-semibold text-slate-900">
+          Software Developer Intern
+        </h3>
+
+        <div className="text-slate-600 text-sm">
+          Lab2Client
+          <span className="pl-6">Sept. 2023 — Dec. 2023</span>
+        </div>
+
+        {/* Job description paragraph */}
+        <p className="mt-3 text-slate-700 text-sm leading-relaxed">
+          Description.
+        </p>
+
+        {/* Technologies used */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {["React"].map((tech) => (
             <span
               key={tech}
               className="bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full border border-slate-200"
@@ -43,7 +228,7 @@ export const EXPERIENCE_SLIDES = [
         {/* Full-section image */}
         <Image
           src="/temp_image.png"
-          alt="Acme Tech logo"
+          alt="Company Logo"
           fill
           className="object-cover"
           priority
@@ -51,8 +236,14 @@ export const EXPERIENCE_SLIDES = [
 
         {/* Overlay link */}
         <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
+          <div
+            className="absolute top-0 left-0 z-10 ml-2 mt-2 font-bold text-2xl text-white hover:animate-pulse"
+            title="Logos and trademarks are property of their respective owners and are used for identification purposes only!"
+          >
+            &#9432;
+          </div>
           <a
-            href="https://www.acmetech.com"
+            href="https://www.lab2client.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-sm font-medium hover:underline"
@@ -62,86 +253,17 @@ export const EXPERIENCE_SLIDES = [
         </div>
       </div>
     </div>
-    {/* #############################################################
-    ################################################################# */}
-
-    <div className="flex bg-white rounded-xl shadow-lg overflow-hidden h-[500px] w-full">
-      {/* Left Section (70%) */}
-      <div className="flex flex-col justify-center gap-3 basis-[70%] px-10 py-8">
-        <h3 className="text-xl font-semibold text-slate-900">
-          Senior Software Engineer
-        </h3>
-        <div className="text-slate-600 text-sm">Acme Tech • Remote</div>
-        <div className="text-slate-500 text-xs">Jan 2022 — Present</div>
-
-        {/* Job description paragraph */}
-        <p className="mt-3 text-slate-700 text-sm leading-relaxed">
-          Architected and maintained a realtime analytics dashboard using React
-          and TypeScript, implementing scalable CI/CD pipelines and improving
-          release efficiency by 40%. Mentored junior engineers and led front-end
-          refactors to enhance maintainability and accessibility.
-        </p>
-
-        {/* Technologies used */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {["React", "TypeScript", "Node.js", "CI/CD", "AWS"].map((tech) => (
-            <span
-              key={tech}
-              className="bg-slate-100 text-slate-800 text-xs font-medium px-3 py-1 rounded-full border border-slate-200"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Right Section (30%) */}
-      <div className="relative basis-[30%]">
-        {/* Full-section image */}
-        <Image
-          src="/temp_image.png"
-          alt="Acme Tech logo"
-          fill
-          className="object-cover"
-          priority
-        />
-
-        {/* Overlay link */}
-        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
-          <a
-            href="https://www.acmetech.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-sm font-medium hover:underline"
-          >
-            Visit Website →
-          </a>
-        </div>
-      </div>
-    </div>
-    {/* #############################################################
-    ################################################################# */}
   </article>,
 ];
 
-/* 
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-*/
+
+
+
 
 export const PROJECT_SLIDES = [
   <article
     key="proj-1"
-    className="flex flex-col bg-white rounded-xl shadow-lg w-full h-full overflow-hidden px-12 py-10"
+    className="flex flex-col rounded-xl h-full overflow-hidden bg-white p-10"
   >
     {/* Title */}
     <h2 className="text-5xl font-bold text-center">Deepslate Tweaks</h2>
@@ -204,8 +326,8 @@ export const PROJECT_SLIDES = [
         <Image
           src="/deepslate_tweaks_logo.png"
           alt="Project preview"
-          width={300}
-          height={300}
+          width={1000}
+          height={1000}
           className="object-contain rounded-2xl border border-slate-200 shadow-sm"
           priority
         />
@@ -214,7 +336,7 @@ export const PROJECT_SLIDES = [
   </article>,
   <article
     key="proj-2"
-    className="flex flex-col bg-white rounded-xl shadow-lg w-full h-full overflow-hidden px-12 py-10"
+    className="flex flex-col rounded-xl h-full overflow-hidden bg-white p-10"
   >
     {/* Title */}
     <h2 className="text-5xl font-bold text-center">The Grate Escape!</h2>
@@ -273,7 +395,7 @@ export const PROJECT_SLIDES = [
   </article>,
   <article
     key="proj-3"
-    className="flex flex-col bg-white rounded-xl shadow-lg w-full h-full overflow-hidden px-12 py-10"
+    className="flex flex-col rounded-xl h-full overflow-hidden bg-white p-10"
   >
     {/* Title */}
     <h2 className="text-5xl font-bold text-center">
@@ -330,9 +452,9 @@ export const PROJECT_SLIDES = [
         <Image
           src="/chrollo_dst_portrait.png"
           alt="Project preview"
-          width={350}
-          height={350}
-          className="object-contain rounded-2xl"
+          width={370}
+          height={370}
+          className="object-contain"
           priority
         />
       </div>
@@ -340,7 +462,7 @@ export const PROJECT_SLIDES = [
   </article>,
   <article
     key="proj-4"
-    className="flex flex-col bg-white rounded-xl shadow-lg w-full h-full overflow-hidden px-12 py-10"
+    className="flex flex-col rounded-xl h-full overflow-hidden bg-white p-10"
   >
     {/* Title */}
     <h2 className="text-5xl font-bold text-center">Portfolio Website</h2>

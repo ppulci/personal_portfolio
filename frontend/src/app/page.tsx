@@ -17,8 +17,8 @@ export default function Home() {
       <AnimatedGreetingSection />
 
       {/* About Me Section */}
-      <section className="relative min-h-screen bg-gray-100 overflow-hidden">
-        <div className="relative mx-auto w-full max-w-[80rem] my-16 space-y-28">
+      <section className="relative min-h-screen bg-gray-100 overflow-hidden py-16">
+        <div className="space-y-28">
           {/* Bio */}
           <SideLabelSection id="bio" label="about">
             <IntroBlurb />
@@ -37,11 +37,8 @@ export default function Home() {
           {/* Projects */}
           <SideLabelSection id="projects" label="projects" className="scroll-mt-16">
             <EmblaCarousel slides={PROJECT_SLIDES} />
+            <p className="text-center text-2xl mt-4">Check out my Github for more!</p>
           </SideLabelSection>
-
-          <div className="text-center text-4xl px-4">
-            Like what you see? Lets connect!
-          </div>
         </div>
       </section>
 

@@ -10,9 +10,7 @@ export default function Contact() {
       <Navbar />
 
       <main className="flex-1 flex-col flex items-center justify-center py-6 pt-28">
-        <div className="trimmed-container">
-          <ContactMe />
-        </div> 
+        <ContactMe />
         <SocialLinks />
       </main>
 
