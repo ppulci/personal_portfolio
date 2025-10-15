@@ -24,7 +24,6 @@ import {
 } from "react-icons/si";
 
 export default function TechnologyShowcase() {
-  // FRONTEND: UI / client-focused tools & frameworks
   const frontendItems = [
     { name: "HTML", Icon: SiHtml5, color: "text-[#E34F26]" },
     { name: "CSS", Icon: SiCss3, color: "text-[#1572B6]" },
@@ -37,14 +36,12 @@ export default function TechnologyShowcase() {
     { name: "Bootstrap", Icon: SiBootstrap, color: "text-[#7952B3]" },
   ];
 
-  // BACKEND: server/runtime & infra tools
   const backendItems = [
     { name: "Node.js", Icon: SiNodedotjs, color: "text-[#339933]" },
     { name: "Express.js", Icon: SiExpress, color: "text-[#000000]" },
     { name: "GoLang", Icon: SiGo, color: "text-[#00ADD8]" },
   ];
 
-  // DATABASE / BaaS
   const databaseItems = [
     { name: "MongoDB", Icon: SiMongodb, color: "text-[#47A248]" },
     { name: "MySQL", Icon: SiMysql, color: "text-[#4479A1]" },
@@ -53,7 +50,6 @@ export default function TechnologyShowcase() {
     // { name: "PostgreSQL", Icon: SiPostgresql, color: "text-[#336791]" }
   ];
 
-  // DEVOPS / CI/CD
   const toolsItems = [
     { name: "Docker", Icon: SiDocker, color: "text-[#2496ED]" },
     { name: "Figma", Icon: SiFigma, color: "text-[#F24E1E]" },
@@ -63,10 +59,13 @@ export default function TechnologyShowcase() {
     { name: "Postman", Icon: SiPostman, color: "text-[#FF6C37]" },
   ];
 
-  // helper to render a grid for a category
   function renderCategory(
     title: string,
-    items: { name: string; Icon: any; color: string }[]
+    items: {
+      name: string;
+      Icon: React.ComponentType<{ className?: string }>;
+      color: string;
+    }[]
   ) {
     const sorted = items.slice().sort((a, b) => a.name.localeCompare(b.name));
     return (
@@ -101,7 +100,6 @@ export default function TechnologyShowcase() {
     <>
       {renderCategory("Front End", frontendItems)}
 
-      {/* Back End and Database shown side-by-side and top-aligned */}
       <div className="flex flex-row flex-wrap justify-center items-start gap-24">
         <div className="w-full sm:w-[20rem]">
           {renderCategory("Back End", backendItems)}

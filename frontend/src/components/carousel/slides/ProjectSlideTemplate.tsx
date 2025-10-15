@@ -12,7 +12,6 @@ type ProjectSlideProps = {
   picWidth?: number;
   picHeight?: number;
   pageLink?: string;
-
 };
 
 const ProjectSlide: React.FC<ProjectSlideProps> = ({
@@ -22,9 +21,9 @@ const ProjectSlide: React.FC<ProjectSlideProps> = ({
   techStack = [],
   badges = false,
   image,
-  imageArgs = "object-cover ",
-  picWidth = 200,
-  picHeight = 200,
+  imageArgs = "object-cover",
+  picWidth = 500,
+  picHeight = 500,
   pageLink,
 }) => {
   return (
@@ -33,15 +32,15 @@ const ProjectSlide: React.FC<ProjectSlideProps> = ({
         {/* Left Side: Content (60%) */}
         <div className="flex-[6] p-6 flex flex-col justify-center">
           <div>
-            <h3 className="text-lg font-semibold">{title}</h3>
+            <h3 className="text-2xl font-semibold">{title}</h3>
             <span className="text-xs text-slate-500 font-normal">{date}</span>
           </div>
 
-          <p className="text-sm wrap-normal mt-4">{description}</p>
+          <p className="text-sm wrap-normal mt-2">{description}</p>
 
           {/* Tech stack Bubbles */}
           {techStack.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2">
               {techStack.map((tech) => (
                 <span
                   key={tech}
@@ -53,9 +52,9 @@ const ProjectSlide: React.FC<ProjectSlideProps> = ({
             </div>
           )}
 
-          {/* Downloads Badges (FIX ME) */}
+          {/* Downloads Badges */}
           {badges && (
-            <div className="flex flex-row mb-6">
+            <div className="flex flex-row mt-6">
               <img
                 src="https://cf.way2muchnoise.eu/full_632466_downloads.svg?badge_style=for_the_badge"
                 alt="CurseForge Downloads"
@@ -72,20 +71,20 @@ const ProjectSlide: React.FC<ProjectSlideProps> = ({
             href={pageLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg text-blue-500 hover:underline"
+            className="text-lg text-blue-500 hover:underline mt-6"
           >
             Visit Github →
           </a>
         </div>
 
         {/* Right Side: Image (40%) */}
-        <div className="flex-[4] relative">
+        <div className="flex-[4] relative flex items-center justify-center p-6">
           <Image
             src={image}
             alt={title}
             width={picWidth}
             height={picHeight}
-            className={`${imageArgs}`}
+            className={`${imageArgs} rounded-xl`}
             priority
           />
         </div>

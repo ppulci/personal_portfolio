@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import GreetingMessage from "@/components/GreetingMessage";
+import GreetingMessage from "@/components/GreetingMessageWords";
 
 const myPaths: string[] = [
   "M159.6 -241.4C226.9 -237.6 315.2 -235.3 341.3 -195.3C367.4 -155.3 331.2 -77.7 319.8 -6.6C308.4 64.5 321.8 129 290.4 159.9C259.1 190.8 183.1 188.1 127.2 185.3C71.3 182.6 35.7 179.9 2.7 175.3C-30.3 170.7 -60.7 164.1 -117.4 167.4C-174.1 170.6 -257.2 183.5 -290.1 157.3C-322.9 131 -305.4 65.5 -302.3 1.8C-299.1 -61.8 -310.2 -123.7 -301.6 -191.9C-292.9 -260.1 -264.6 -334.6 -211 -346.4C-157.5 -358.1 -78.8 -307.1 -16.3 -278.8C46.2 -250.6 92.3 -245.3 159.6 -241.4",
@@ -77,7 +77,7 @@ export default function AnimatedGreetingSection() {
             className="text-slate-800 w-12 h-12 transform origin-center animate-bounce"
             aria-hidden="true"
           >
-            <polyline points="6 9 12 15 18 9" />
+            <polyline points="6 9 12 15 18 9"/>
           </svg>
         </div>
       </div>

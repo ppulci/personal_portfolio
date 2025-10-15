@@ -1,39 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-pp-black: #0a0a0a;
-  --color-pp-yellow: #ffbe42;
-  --color-pp-blue: #2b50aa;
-  --color-pp-grey: #474747;
-  --color-pp-five: #ffbe42;
-  --color-pp-six: #0a0a0a;
-  --color-pp-test: #faf9f7;
-}
-.color-viewer {
-  --test1: #212121;
-  --test2: #f7c96e;
-  --test3: #ad343e;
-  --test4: #474747;
-  --test5: #f2af29;
-  --test6: #0a0a0a;
-  --test7: #ffbe42; /* EMOJI HAND COLOR */
-  --test8: #272727;
-  --test9: #0d0d0d;
-  --test10: #2b50aa;
-  --test11: #707070;
-
-  --test12: #14213d;
-  --test13: #fca311;
+  --color-peter-yellow: #ffbe42;
 }
 
 :root {
-  /* ??????????? */
-  --tw-bg-opacity: 1;
   --font-roboto: "Roboto", sans-serif;
 }
 
 html {
-  /* ????????? */
+  /* This keeps the scroll for the contact page */
   overflow-y: scroll;
 }
 
@@ -156,7 +132,7 @@ body {
 }
 
 .knock {
-  animation: knock 0.3s 3;
+  animation: knock 0.5s infinite;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
 }

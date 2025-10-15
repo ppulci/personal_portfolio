@@ -18,7 +18,7 @@ export default function Navbar() {
     <header className="w-full flex justify-center fixed top-0 left-0 z-50 pointer-events-auto">
       <nav
         className="
-          w-[70vw] max-w-6xl
+          w-6xl
           bg-white/70
           backdrop-blur-xl
           rounded-2xl
@@ -29,7 +29,7 @@ export default function Navbar() {
           mt-6
         "
       >
-        {/* Left: Logo */}
+        {/* Logo */}
         <div className="flex-shrink-0 flex items-center mr-8">
           <Image
             src="/temp_image.png"
@@ -40,7 +40,7 @@ export default function Navbar() {
           />
         </div>
 
-        {/* Center: Navigation Links */}
+        {/* Navigation Links */}
         <div className="flex-1 flex justify-center">
           <div className="flex space-x-6">
             {navItems.map((item) => {
@@ -67,7 +67,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Right: Social Links */}
+        {/* Social Links */}
         <div className="flex items-center space-x-4 ml-8">
           <a
             href="https://github.com/ppulci"

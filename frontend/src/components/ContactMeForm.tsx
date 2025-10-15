@@ -13,6 +13,7 @@ export default function ContactMe() {
     const email = formData.get("email")?.toString() || "";
     const message = formData.get("message")?.toString() || "";
 
+    {/* Back End Address */}
     const res = await fetch("http://localhost:8080/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,14 +33,14 @@ export default function ContactMe() {
   return (
     <div className="flex flex-col items-center w-full">
       <h2 className="text-5xl font-bold mb-4 text-center text-gray-800">
-        Reach <span className="text-yellow-500">Out</span>
+        Reach <span className="text-peter-yellow">Out</span>
       </h2>
       <p className="text-gray-600 text-center mb-10 max-w-2xl">
         Interested in what I&apos;m building? Let&apos;s connect and see how we can collaborate.
       </p>
 
       <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-6">
-        {/* Name and Email side by side */}
+        {/* Name and Email*/}
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex-1 flex flex-col">
             <label htmlFor="name" className="mb-2 text-left font-medium text-gray-700">
@@ -49,7 +50,7 @@ export default function ContactMe() {
               id="name"
               name="name"
               required
-              className="border-2 border-gray-300 rounded-md px-4 py-3 text-gray-800 placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-colors"
+              className="border-2 border-gray-300 rounded-md px-4 py-3 text-gray-800 placeholder-gray-500 focus:border-peter-yellow focus:outline-none transition-colors"
               placeholder="Peter Parker"
             />
           </div>
@@ -62,13 +63,13 @@ export default function ContactMe() {
               type="email"
               name="email"
               required
-              className="border-2 border-gray-300 rounded-md px-4 py-3 text-gray-800 placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-colors"
+              className="border-2 border-gray-300 rounded-md px-4 py-3 text-gray-800 placeholder-gray-500 focus:border-peter-yellow focus:outline-none transition-colors"
               placeholder="name@example.com"
             />
           </div>
         </div>
 
-        {/* Message below, full width */}
+        {/* Message */}
         <div className="flex flex-col">
           <label htmlFor="message" className="mb-2 text-left font-medium text-gray-700">
             Message <span className="text-red-500">*</span>
@@ -77,7 +78,7 @@ export default function ContactMe() {
             id="message"
             name="message"
             required
-            className="border-2 border-gray-300 rounded-md px-4 py-3 text-gray-800 placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-colors resize-none"
+            className="border-2 border-gray-300 rounded-md px-4 py-3 text-gray-800 placeholder-gray-500 focus:border-peter-yellow focus:outline-none transition-colors resize-none"
             placeholder="What can I do for you?"
             rows={6}
           />
@@ -87,7 +88,7 @@ export default function ContactMe() {
         <div className="flex justify-center mt-4">
           <button
             type="submit"
-            className="px-8 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold rounded-md shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-8 py-3 bg-peter-yellow hover:bg-yellow-500 text-gray-800 font-semibold rounded-md shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={status === "sending"}
           >
             {status === "sending" ? "Sending..." : "Send Message"}

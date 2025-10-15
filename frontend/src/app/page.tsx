@@ -12,7 +12,6 @@ import ProjectSlides from "@/components/carousel/slides/ProjectSlides";
 export default function Home() {
   return (
     <>
-      {/* Navbar Only, on every page */}
       <Navbar />
 
       {/* Greeting Section with Animated SVG Background */}
@@ -43,8 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Copyright Only, on every page */}
-      <Footer bgColor="bg-gray-100" />
+      <Footer />
     </>
   );
 }

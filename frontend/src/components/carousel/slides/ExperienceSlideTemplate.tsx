@@ -5,6 +5,7 @@ type ExperienceSlideProps = {
   title: string;
   date: string;
   description: string;
+  contributions?: string[];
   techStack?: string[];
   image: string;
   imageArgs?: string;
@@ -19,18 +20,31 @@ const ExperienceSlideTemplate: React.FC<ExperienceSlideProps> = ({
   image,
   imageArgs = "object-cover ",
   pageLink,
+  contributions = [],
 }) => {
   return (
     <div className="w-full h-1/2 overflow-hidden py-2">
       <div className="flex flex-row w-full h-full bg-white rounded-4xl shadow-md overflow-hidden">
         {/* Left Side: Content (70%) */}
         <div className="flex-[7] p-6 flex flex-col justify-center">
-          <div>
-            <h3 className="text-lg font-semibold">{title}</h3>
-            <span className="text-xs text-slate-500 font-normal">{date}</span>
+          <div className="leading-none">
+            <h3 className="text-lg font-semibold relative">
+              {title}
+              <span className="text-sm absolute right-0">{date}</span>
+            </h3>
+            <p className="text-sm italic wrap-normal mt-1">{description}</p>
           </div>
 
-          <p className="text-sm wrap-normal mt-4">{description}</p>
+          {contributions.length > 0 && (
+            <ul className="text-sm wrap-normal mt-4 list-disc list-inside">
+              <span className="font-semibold">Key Contributions:</span>
+              {contributions.map((item) => (
+                <li key={item} className="pl-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          )}
 
           {/* Tech stack Bubbles */}
           {techStack.length > 0 && (
@@ -45,6 +59,17 @@ const ExperienceSlideTemplate: React.FC<ExperienceSlideProps> = ({
               ))}
             </div>
           )}
+
+          {pageLink && (
+            <a
+              href={pageLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative bottom-0 left-2 text-base text-blue-500 hover:underline mt-4"
+            >
+              Visit Website →
+            </a>
+          )}
         </div>
 
         {/* Right Side: Image (30%) */}
@@ -53,18 +78,10 @@ const ExperienceSlideTemplate: React.FC<ExperienceSlideProps> = ({
             src={image}
             alt={title}
             fill
-            className={`${imageArgs}`} //w-full h-full
+            className={`${imageArgs}`}
             priority
+            title="Logos and trademarks are property of their respective owners and are used for identification purposes only."
           />
-
-          <a
-            href={pageLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute bottom-0 left-2 text-lg text-red-500 hover:underline"
-          >
-            Visit Website →
-          </a>
         </div>
       </div>
     </div>

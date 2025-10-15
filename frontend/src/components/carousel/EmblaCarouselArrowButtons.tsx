@@ -65,7 +65,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
       type="button"
       {...restProps}
     >
-      <HiOutlineArrowSmLeft className='embla__button__svg'/>
+      <HiOutlineArrowSmLeft className='embla__button__svg scale-125'/>
       {children}
     </button>
   )
@@ -80,7 +80,7 @@ export const NextButton: React.FC<PropType> = (props) => {
       type="button"
       {...restProps}
     >
-      <HiOutlineArrowSmRight className='embla__button__svg'/>
+      <HiOutlineArrowSmRight className='embla__button__svg scale-125'/>
       {children}
     </button>
   )

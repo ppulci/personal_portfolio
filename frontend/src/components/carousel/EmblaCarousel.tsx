@@ -44,8 +44,8 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   } = usePrevNextButtons(emblaApi, onNavButtonClick);
 
   return (
-    <section className="embla w-full max-w-none h-[45rem]">
-      {/* Viewport takes full width of parent column */}
+    <section className="embla w-full max-w-none h-[45rem]"> {/* forcing carousel to size to h-[45rem] */}
+      {/* Force the viewport takes full width of parent column */}
       <div
         className="embla__viewport w-full h-[90%] overflow-hidden"
         ref={emblaRef}
@@ -64,13 +64,12 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
 
       {/* Controls */}
       <div className="embla__controls absolute bottom-0 w-full h-[10%] flex items-center justify-center px-12">
-        {/* Center group: arrows + dots inline */}
         <div className="flex flex-row items-center justify-center gap-4">
           {/* Prev Button */}
           <PrevButton
             onClick={onPrevButtonClick}
             disabled={prevBtnDisabled}
-            className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center shadow-md hover:bg-white hover:text-black transition-colors duration-200"
+            className="w-6 h-6 rounded-full bg-white text-black flex items-center justify-center shadow-md hover:bg-gray-200 hover:text-black transition-colors duration-200"
           />
 
           {/* Dots */}
@@ -79,7 +78,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
               <DotButton
                 key={index}
                 onClick={() => onDotButtonClick(index)}
-                className={`w-4 h-4 rounded-full transition-colors border border-black ${
+                className={`w-4 h-4 rounded-full transition-colors border-2 border-black ${
                   index === selectedIndex ? "bg-black" : "bg-white"
                 }`}
               />
@@ -90,16 +89,8 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
           <NextButton
             onClick={onNextButtonClick}
             disabled={nextBtnDisabled}
-            className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center shadow-md hover:bg-white hover:text-black transition-colors duration-200"
+            className="w-6 h-6 rounded-full bg-white text-black flex items-center justify-center shadow-md hover:bg-gray-200 hover:text-black transition-colors duration-200"
           />
-        </div>
-
-        {/* Info icon aligned to far right */}
-        <div
-          className="absolute right-8 text-2xl font-bold text-black hover:text-gray-700 cursor-pointer select-none transition-all duration-200"
-          title="Logos and trademarks are property of their respective owners and are used for identification purposes only."
-        >
-          &#9432;
         </div>
       </div>
     </section>

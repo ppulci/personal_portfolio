@@ -25,13 +25,17 @@ export const ProjectSlides = [
     date="Created August 2021"
     description="
           The Grate Escape is a vertical arcade platformer where you play as a
-          piece of cheese climbing through the depths of a grater. Built using
+          piece of cheese climbing through the depths of a grater. It features
+          an infinitely scrolling level with procedurally generated enemy 
+          placements, ensuring every run feels unique! Built using
           Unity with C# and featuring original artwork and a custom soundtrack.
           Be sure to check out the adorable little cheeses and take part in the
           climb to see yourself out of the grate -- and onto the leaderboards!"
     techStack={["C#", "Unity", "Google Game Services", "Photoshop", "Audacity"]}
     pageLink="https://github.com/ppulci/TheGrateEscape"
     image="/TGE_main_menu.png"
+    picHeight={325}
+    picWidth={325}
   />,
   <ProjectSlide
     key="slide-3"
@@ -60,10 +64,12 @@ export const ProjectSlides = [
         experience, projects, and technical skills. The frontend is built with
         React, TailwindCSS, Next.js, and Framer Motion for animations, while
         the backend runs on a Gin server written in Go. The site includes
-        subtle animations and is fully responsive across all devices."
-    techStack={["React", "Next.js", "TailwindCSS", "Framer Motion", "TypeScript"]}
+        a few animations and a touch of personality to bring it all together."
+    techStack={["React", "Next.js", "TailwindCSS", "Framer Motion", "TypeScript", "MongoDB"]}
     pageLink="https://github.com/ppulci/Personal-Portfolio"
     image="/website_portfolio_code.png"
+    picHeight={350}
+    picWidth={350}
   />,
 ];
 
