@@ -20,8 +20,8 @@ export default function Home() {
       {/* About Me Section */}
       <section className="relative min-h-screen bg-gray-100 overflow-hidden py-16">
         <div className="space-y-28">
-          {/* Bio */}
-          <SideLabelSection id="bio" label="about">
+          {/* About */}
+          <SideLabelSection id="about" label="about">
             <IntroBlurb />
           </SideLabelSection>
 

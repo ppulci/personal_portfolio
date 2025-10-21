@@ -28,11 +28,11 @@ const ProjectSlide: React.FC<ProjectSlideProps> = ({
 }) => {
   return (
     <div className="w-full h-full overflow-hidden py-2">
-      <div className="flex flex-row w-full h-full bg-white rounded-4xl shadow-md overflow-hidden">
+      <div className="flex flex-col lg:flex-row w-full h-full bg-white rounded-4xl shadow-md overflow-y-scroll lg:overflow-hidden">
         {/* Left Side: Content (60%) */}
-        <div className="flex-[6] p-6 flex flex-col justify-center">
+        <div className="flex-[6] ml-6 flex flex-col justify-center">
           <div>
-            <h3 className="text-2xl font-semibold">{title}</h3>
+            <h3 className="text-2xl font-semibold mt-4">{title}</h3>
             <span className="text-xs text-slate-500 font-normal">{date}</span>
           </div>
 
@@ -54,15 +54,16 @@ const ProjectSlide: React.FC<ProjectSlideProps> = ({
 
           {/* Downloads Badges */}
           {badges && (
-            <div className="flex flex-row mt-6">
+            <div className="flex flex-col sm:flex-row mt-6 gap-4">
               <img
                 src="https://cf.way2muchnoise.eu/full_632466_downloads.svg?badge_style=for_the_badge"
                 alt="CurseForge Downloads"
-                className="mr-6"
+                className="w-48 h-6 sm:h-8"
               />
               <img
                 src="https://img.shields.io/modrinth/dt/Jc0FvX5i?logo=modrinth&style=for-the-badge&logoColor=4c1&labelColor=2D2D2D"
                 alt="Modrinth Downloads"
+                className="w-48 h-6 sm:h-8"
               />
             </div>
           )}

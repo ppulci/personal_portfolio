@@ -1,20 +1,19 @@
 "use client";
 import TypeIt from "typeit-react";
 
-// Update greetings to include per-letter speeds and pause
 const greetings = [
   {
     // "Welcome 😎"
     letters: [
-      { char: "W", speed: 100 },
-      { char: "e", speed: 300 },
-      { char: "l", speed: 100 },
-      { char: "c", speed: 300 },
-      { char: "o", speed: 200 },
-      { char: "m", speed: 100 },
+      { char: "W", speed: 50 },
       { char: "e", speed: 100 },
-      { char: " ", speed: 100 },
-      { char: "😎", speed: 300, isEmoji: true, animation: "shake" },
+      { char: "l", speed: 50 },
+      { char: "c", speed: 100 },
+      { char: "o", speed: 100 },
+      { char: "m", speed: 50 },
+      { char: "e", speed: 50 },
+      { char: " ", speed: 50 },
+      { char: "😎", speed: 200, isEmoji: true, animation: "shake" },
     ],
     pauseAfter: 3000,
     deleteSpeed: 1000,
@@ -22,16 +21,16 @@ const greetings = [
   {
     // "Hey There! 👋"
     letters: [
-      { char: "H", speed: 100 },
+      { char: "H", speed: 50 },
       { char: "e", speed: 250 },
-      { char: "y", speed: 100 },
-      { char: " ", speed: 100 },
-      { char: "t", speed: 100 },
+      { char: "y", speed: 50 },
+      { char: " ", speed: 50 },
+      { char: "t", speed: 50 },
       { char: "h", speed: 150 },
       { char: "e", speed: 350 },
-      { char: "r", speed: 100 },
-      { char: "e ", speed: 100 },
-      { char: "👋", speed: 100, isEmoji: true, animation: "wave right" },
+      { char: "r", speed: 50 },
+      { char: "e ", speed: 50 },
+      { char: "👋", speed: 50, isEmoji: true, animation: "wave right" },
     ],
     pauseAfter: 3000,
     deleteSpeed: 1000,
@@ -39,10 +38,10 @@ const greetings = [
   {
     // "Sup ✌️"
     letters: [
-      { char: "S", speed: 100 },
-      { char: "u", speed: 100 },
-      { char: "p ", speed: 100 },
-      { char: "✌️", speed: 100, isEmoji: true, animation: "wave middle" },
+      { char: "S", speed: 50 },
+      { char: "u", speed: 50 },
+      { char: "p ", speed: 50 },
+      { char: "✌️", speed: 50, isEmoji: true, animation: "wave middle" },
     ],
     pauseAfter: 3000,
     deleteSpeed: 1000,
@@ -50,12 +49,12 @@ const greetings = [
   {
     // "Howdy 🤠"
     letters: [
-      { char: "H", speed: 100 },
-      { char: "o", speed: 100 },
-      { char: "w", speed: 300 },
-      { char: "d", speed: 100 },
-      { char: "y ", speed: 200 },
-      { char: "🤠", speed: 100, isEmoji: true, animation: "jump" },
+      { char: "H", speed: 50 },
+      { char: "o", speed: 50 },
+      { char: "w", speed: 200 },
+      { char: "d", speed: 50 },
+      { char: "y ", speed: 100 },
+      { char: "🤠", speed: 50, isEmoji: true, animation: "jump" },
     ],
     pauseAfter: 3000,
     deleteSpeed: 1000,
@@ -63,17 +62,17 @@ const greetings = [
   {
     // "Knock Knock ✊"
     letters: [
-      { char: "K", speed: 100 },
-      { char: "n", speed: 200 },
-      { char: "o", speed: 100 },
-      { char: "c", speed: 200 },
-      { char: "k ", speed: 200 },
-      { char: "K", speed: 100 },
+      { char: "K", speed: 50 },
       { char: "n", speed: 100 },
-      { char: "o", speed: 100 },
-      { char: "c", speed: 200 },
-      { char: "k ", speed: 300 },
-      { char: "✊", speed: 200, isEmoji: true, animation: "knock" },
+      { char: "o", speed: 50 },
+      { char: "c", speed: 100 },
+      { char: "k ", speed: 100 },
+      { char: "K", speed: 50 },
+      { char: "n", speed: 50 },
+      { char: "o", speed: 50 },
+      { char: "c", speed: 100 },
+      { char: "k ", speed: 200 },
+      { char: "✊", speed: 100, isEmoji: true, animation: "knock" },
     ],
     pauseAfter: 3000,
     deleteSpeed: 1000,
@@ -81,16 +80,16 @@ const greetings = [
   {
     // "Excuse me ☝️"
     letters: [
-      { char: "E", speed: 100 },
-      { char: "x", speed: 100 },
-      { char: "c", speed: 300 },
-      { char: "u", speed: 100 },
-      { char: "s", speed: 100 },
-      { char: "e", speed: 100 },
-      { char: " ", speed: 100 },
-      { char: "m", speed: 300 },
-      { char: "e ", speed: 100 },
-      { char: "☝️", speed: 100, isEmoji: true, animation: "wave middle" },
+      { char: "E", speed: 50 },
+      { char: "x", speed: 50 },
+      { char: "c", speed: 200 },
+      { char: "u", speed: 50 },
+      { char: "s", speed: 50 },
+      { char: "e", speed: 50 },
+      { char: " ", speed: 50 },
+      { char: "m", speed: 200 },
+      { char: "e ", speed: 50 },
+      { char: "☝️", speed: 50, isEmoji: true, animation: "wave middle" },
     ],
     pauseAfter: 3000,
     deleteSpeed: 1000,
@@ -98,14 +97,14 @@ const greetings = [
   {
     //Hey You 😁
     letters: [
-      { char: "H", speed: 100 },
-      { char: "e", speed: 100 },
-      { char: "y", speed: 200 },
-      { char: " ", speed: 100 },
+      { char: "H", speed: 50 },
+      { char: "e", speed: 50 },
       { char: "y", speed: 100 },
-      { char: "o", speed: 300 },
-      { char: "u ", speed: 200 },
-      { char: "😁", speed: 100, isEmoji: true, animation: "scare" },
+      { char: " ", speed: 50 },
+      { char: "y", speed: 50 },
+      { char: "o", speed: 200 },
+      { char: "u ", speed: 100 },
+      { char: "😁", speed: 50, isEmoji: true, animation: "scare" },
     ],
     pauseAfter: 3000,
     deleteSpeed: 1000,
@@ -115,46 +114,46 @@ const greetings = [
     letters: [
       { char: "Y", speed: 500 },
       { char: "o ", speed: 500 },
-      { char: "🤙", speed: 100, isEmoji: true, animation: "knock" },
+      { char: "🤙", speed: 50, isEmoji: true, animation: "knock" },
     ],
     pauseAfter: 3000,
     deleteSpeed: 1000,
   },
-  {
-    // "Boo 👻"
-    letters: [
-      { char: "B", speed: 100 },
-      { char: "o", speed: 100 },
-      { char: "o ", speed: 100 },
-      { char: "👻", speed: 100, isEmoji: true, animation: "scare" },
-    ],
-    pauseAfter: 3000,
-    deleteSpeed: 1000,
-  },
-  {
-    // " 👀"
-    letters: [
-      { char: "W", speed: 100 },
-      { char: "h", speed: 100 },
-      { char: "o", speed: 200 },
-      { char: " ", speed: 100 },
-      { char: "a", speed: 100 },
-      { char: "r", speed: 100 },
-      { char: "e", speed: 200 },
-      { char: " ", speed: 100 },
-      { char: "y", speed: 100 },
-      { char: "o", speed: 200 },
-      { char: "u? ", speed: 100 },
-      { char: "👀", speed: 100, isEmoji: true, animation: "stare" },
-    ],
-    pauseAfter: 3000,
-    deleteSpeed: 1000,
-  },
+  // {
+  //   // "Boo 👻"
+  //   letters: [
+  //     { char: "B", speed: 50 },
+  //     { char: "o", speed: 50 },
+  //     { char: "o ", speed: 50 },
+  //     { char: "👻", speed: 50, isEmoji: true, animation: "scare" },
+  //   ],
+  //   pauseAfter: 3000,
+  //   deleteSpeed: 1000,
+  // },
+  // {
+  //   // " 👀"
+  //   letters: [
+  //     { char: "W", speed: 50 },
+  //     { char: "h", speed: 50 },
+  //     { char: "o", speed: 100 },
+  //     { char: " ", speed: 50 },
+  //     { char: "a", speed: 50 },
+  //     { char: "r", speed: 50 },
+  //     { char: "e", speed: 100 },
+  //     { char: " ", speed: 50 },
+  //     { char: "y", speed: 50 },
+  //     { char: "o", speed: 100 },
+  //     { char: "u? ", speed: 50 },
+  //     { char: "👀", speed: 50, isEmoji: true, animation: "stare" },
+  //   ],
+  //   pauseAfter: 3000,
+  //   deleteSpeed: 1000,
+  // },
 ];
 
 export default function GreetingMessage() {
   return (
-    <div className="text-8xl font-bold">
+    <div className="text-4xl sm:text-7xl lg:text-8xl font-bold">
       <TypeIt
         options={{
           loop: true,
@@ -173,7 +172,6 @@ export default function GreetingMessage() {
                 instance.type(letter.char);
               }
 
-              // Instead of using speed, use a manual pause to simulate variable pacing
               instance.pause(letter.speed || 100);
             });
 

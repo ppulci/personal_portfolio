@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className={`text-slate-400 py-2 text-sm bg-gray-100`}>
+    <footer className={`text-slate-400 p-2 text-sm bg-gray-100`}>
       <div className="flex justify-between items-center max-w-[80rem] mx-auto">
         <div>
           &copy; {new Date().getFullYear()} Peter Pulcini

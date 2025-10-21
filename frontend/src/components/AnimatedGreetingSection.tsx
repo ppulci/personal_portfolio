@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import GreetingMessage from "@/components/GreetingMessageWords";
+import { SlArrowDown } from "react-icons/sl";
 
 const myPaths: string[] = [
   "M159.6 -241.4C226.9 -237.6 315.2 -235.3 341.3 -195.3C367.4 -155.3 331.2 -77.7 319.8 -6.6C308.4 64.5 321.8 129 290.4 159.9C259.1 190.8 183.1 188.1 127.2 185.3C71.3 182.6 35.7 179.9 2.7 175.3C-30.3 170.7 -60.7 164.1 -117.4 167.4C-174.1 170.6 -257.2 183.5 -290.1 157.3C-322.9 131 -305.4 65.5 -302.3 1.8C-299.1 -61.8 -310.2 -123.7 -301.6 -191.9C-292.9 -260.1 -264.6 -334.6 -211 -346.4C-157.5 -358.1 -78.8 -307.1 -16.3 -278.8C46.2 -250.6 92.3 -245.3 159.6 -241.4",
@@ -25,10 +26,11 @@ export default function AnimatedGreetingSection() {
       {/* Animated SVG Background */}
       <svg
         viewBox="0 0 960 540"
+        preserveAspectRatio="xMidYMid slice"
         className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none"
         aria-hidden="true"
       >
-        <g transform="translate(480 270) scale(1, 0.7)">
+        <g transform="translate(480 270) scale(1, 0.6)">
           <motion.path
             fill="#e9e9e9"
             initial={{ d: myPaths[0] }}
@@ -36,7 +38,7 @@ export default function AnimatedGreetingSection() {
               d: myPaths,
             }}
             transition={{
-              duration: 98,
+              duration: 196,
               repeat: Infinity,
               repeatType: "loop",
               ease: "linear",
@@ -44,41 +46,33 @@ export default function AnimatedGreetingSection() {
           />
         </g>
       </svg>
+
       {/* Foreground Content */}
-      <div className="relative z-10 flex flex-col items-center w-full h-full p-10">
+      <div className="relative z-20 flex flex-col items-center w-full h-full p-10">
         <div className="flex items-end justify-center w-full h-1/3 mt-10">
           <GreetingMessage />
           {/* placed 1/3 of the screen height, plus mt-10 */}
         </div>
 
-        <div className="flex flex-col items-center w-full mt-10">
-          <h1 className="text-5xl">
+        <div className="flex flex-col items-center w-full mt-5 text-center lg:mt-10 ">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl">
             my name is <span className="font-bold">Peter</span>
           </h1>
-          <h3 className="text-2xl font-medium text-slate-600 mt-20">
-            Full Stack Developer and Mod Enthusiast
+          <h3 className="text-base sm:text-2xl font-medium text-slate-600 mt-10 sm:mt-20">
+            Full Stack Developer &amp; Mod Enthusiast
           </h3>
-          <p className="max-w-xl text-center text-xl text-slate-500">
+          <p className="text-sm sm:text-xl text-slate-500">
             Building things is fun to do.
           </p>
         </div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-slate-800 w-12 h-12 transform origin-center animate-bounce"
+          <SlArrowDown
+            className="text-slate-800 w-8 h-8 animate-pulse"
             aria-hidden="true"
-          >
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
+          />
+          {/* animate-pulse */}
         </div>
       </div>
     </section>

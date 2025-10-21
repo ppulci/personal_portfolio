@@ -19,10 +19,13 @@ export default function SideLabelSection({
 }: Props) {
   return (
     <div id={id} className={`relative ${className}`}>
+
       {/* max-w-[80rem], max sized used here to contain sub content */}
       <div className={`relative mx-auto w-full max-w-[80rem] px-6 ${padY}`}>
-        <div className={`grid grid-cols-[7rem_1fr] gap-10 items-start`}>
-          <div className="relative hidden md:flex flex-col h-full items-stretch border-r-2">
+
+        <div className={`lg:grid lg:grid-cols-[7rem_1fr] lg:gap-10 items-start`}>
+
+          <div className="relative hidden lg:flex flex-col h-full items-stretch border-r-2">
             <span
               id={id ? `${id}-title` : undefined}
               className="block leading-none whitespace-nowrap
@@ -33,11 +36,16 @@ export default function SideLabelSection({
             </span>
           </div>
 
+          <div className="lg:hidden text-5xl font-bold tracking-wider uppercase text-center border-b-2 mb-6">
+            {label}
+          </div>
+
           <div
             className={`relative w-full h-full ${centerContent ? "flex items-center" : ""}`}
           >
             <div className="w-full h-full">{children}</div>
           </div>
+          
         </div>
       </div>
     </div>

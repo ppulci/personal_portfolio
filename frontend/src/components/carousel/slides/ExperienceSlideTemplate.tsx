@@ -18,22 +18,26 @@ const ExperienceSlideTemplate: React.FC<ExperienceSlideProps> = ({
   description,
   techStack = [],
   image,
-  imageArgs = "object-cover ",
+  imageArgs = "",
   pageLink,
   contributions = [],
 }) => {
   return (
-    <div className="w-full h-1/2 overflow-hidden py-2">
+    <div className="w-full h-full overflow-hidden py-2">
       <div className="flex flex-row w-full h-full bg-white rounded-4xl shadow-md overflow-hidden">
+        
         {/* Left Side: Content (70%) */}
         <div className="flex-[7] p-6 flex flex-col justify-center">
           <div className="leading-none">
             <h3 className="text-lg font-semibold relative">
               {title}
-              <span className="text-sm absolute right-0">{date}</span>
+              <span className="block mt-1 text-sm lg:mt-0 lg:inline lg:absolute lg:right-0 lg:top-0">
+                {date}
+              </span>
             </h3>
             <p className="text-sm italic wrap-normal mt-1">{description}</p>
           </div>
+
 
           {contributions.length > 0 && (
             <ul className="text-sm wrap-normal mt-4 list-disc list-inside">
@@ -73,7 +77,7 @@ const ExperienceSlideTemplate: React.FC<ExperienceSlideProps> = ({
         </div>
 
         {/* Right Side: Image (30%) */}
-        <div className="flex-[3] relative">
+        <div className="flex-[3] relative hidden lg:flex">
           <Image
             src={image}
             alt={title}
