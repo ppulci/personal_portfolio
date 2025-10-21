@@ -32,7 +32,7 @@ export default function Home() {
 
           {/* Experience */}
           <SideLabelSection id="experience" label="experience" className="scroll-mt-16">
-            <EmblaCarousel slides={ExperienceSlides} />
+            <EmblaCarousel slides={ExperienceSlides} carouselHeight="h-[45rem] lg:h-[33rem] "/>
           </SideLabelSection>
 
           {/* Projects */}

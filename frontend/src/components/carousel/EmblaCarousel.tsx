@@ -14,6 +14,7 @@ import {
 type PropType = {
   slides: React.ReactNode[];
   options?: EmblaOptionsType;
+  carouselHeight?: string;
 };
 
 const autoplayOptions = {
@@ -22,8 +23,14 @@ const autoplayOptions = {
   stopOnInteraction: true,
 };
 
-const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay(autoplayOptions)]);
+const EmblaCarousel: React.FC<PropType> = ({
+  slides,
+  options,
+  carouselHeight = "h-[45rem]",
+}) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Autoplay(autoplayOptions),
+  ]);
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay;
@@ -50,7 +57,9 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   } = usePrevNextButtons(emblaApi, onNavButtonClick);
 
   return (
-    <section className="embla w-full max-w-none h-[45rem]"> {/* forcing carousel to size to h-[45rem] */}
+    <section className={`embla w-full max-w-none ${carouselHeight}`}>
+      {" "}
+      {/* forcing carousel to size to h-[45rem] */}
       {/* Force the viewport takes full width of parent column */}
       <div
         className="embla__viewport w-full h-[90%] overflow-hidden"
@@ -67,7 +76,6 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
           ))}
         </div>
       </div>
-
       {/* Controls */}
       <div className="embla__controls absolute bottom-0 w-full h-[10%] flex items-center justify-center px-12">
         <div className="flex flex-row items-center justify-center gap-4">

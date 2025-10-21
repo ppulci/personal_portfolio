@@ -2,7 +2,7 @@ import React from "react";
 import ExperienceSlide from "./ExperienceSlideTemplate";
 
 const ExperienceSlides = [
-  <div key="slide-1" className="flex flex-col h-full lg:h-1/2">
+  <div key="slide-1" className="flex flex-col h-full">
     <ExperienceSlide
       title="Software Developer Intern @ TENAMINT"
       date="Sep. 2024 — May 2025"
@@ -25,7 +25,7 @@ const ExperienceSlides = [
       pageLink="https://tenamint.com/"
     />
   </div>,
-  <div key="slide-2" className="flex flex-col h-full lg:h-1/2">
+  <div key="slide-2" className="flex flex-col h-full">
     <ExperienceSlide
       title="Software Developer Intern @ Lab2Client"
       date="Sep. 2023 — Dec. 2023"
@@ -48,7 +48,7 @@ const ExperienceSlides = [
       pageLink="https://www.lab2client.com/"
     />
   </div>,
-  <div key="slide-3" className="flex flex-col h-full lg:h-1/2">
+  <div key="slide-3" className="flex flex-col h-full">
     <ExperienceSlide
       title="Stock Associate @ Call It Spring"
       date="May 2023 — Jan. 2024"
@@ -63,7 +63,7 @@ const ExperienceSlides = [
       imageArgs="object-contain pr-10"
     />
   </div>,
-  <div key="slide-4" className="flex flex-col h-full lg:h-1/2">
+  <div key="slide-4" className="flex flex-col h-full">
     <ExperienceSlide
       title="Sale Associate @ Home Hardware"
       date="Mar. 2019 — May 2021"

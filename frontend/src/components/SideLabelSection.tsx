@@ -36,6 +36,7 @@ export default function SideLabelSection({
             </span>
           </div>
 
+          {/* the label when on smaller screens */}
           <div className="lg:hidden text-5xl font-bold tracking-wider uppercase text-center border-b-2 mb-6">
             {label}
           </div>
