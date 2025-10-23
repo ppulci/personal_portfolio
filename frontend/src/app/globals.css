@@ -151,3 +151,22 @@ body {
   animation-delay: 0.2s;
   animation-fill-mode: backwards;
 }
+
+@keyframes bounce_pulse {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    opacity: 1;
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    opacity: 0;
+  }
+}
+
+.bounce_pulse {
+  animation: bounce_pulse 1s infinite;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}

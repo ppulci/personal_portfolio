@@ -69,10 +69,9 @@ export default function AnimatedGreetingSection() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
           <SlArrowDown
-            className="text-slate-800 w-8 h-8 animate-pulse"
+            className="text-slate-800 w-8 h-8 bounce_pulse"
             aria-hidden="true"
           />
-          {/* animate-pulse */}
         </div>
       </div>
     </section>

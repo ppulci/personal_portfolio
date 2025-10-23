@@ -33,7 +33,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center">
           <Image
-            src="/temp_image.png"
+            src="/site_logo.png"
             alt="Peter Pulcini Logo"
             width={36}
             height={36}
