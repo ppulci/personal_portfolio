@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { EmblaOptionsType, EmblaCarouselType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -31,6 +31,7 @@ const EmblaCarousel: React.FC<PropType> = ({
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay(autoplayOptions),
   ]);
+  const carouselContainerRef = useRef<HTMLDivElement | null>(null);
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay;
@@ -56,37 +57,50 @@ const EmblaCarousel: React.FC<PropType> = ({
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi, onNavButtonClick);
 
+  useEffect(() => {
+    if (!carouselContainerRef.current || !emblaApi) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          emblaApi.scrollTo(0);
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    observer.observe(carouselContainerRef.current);
+    return () => observer.disconnect();
+  }, [emblaApi]);
+
   return (
-    <section className={`embla w-full max-w-none ${carouselHeight}`}>
-      {" "}
-      {/* forcing carousel to size to h-[45rem] */}
-      {/* Force the viewport takes full width of parent column */}
-      <div
-        className="embla__viewport w-full h-[90%] overflow-hidden"
-        ref={emblaRef}
-      >
+    <section
+      ref={carouselContainerRef}
+      className={`embla w-full max-w-none ${carouselHeight}`}
+    >
+      {/* Viewport */}
+      <div className="embla__viewport w-full h-[90%] overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex touch-pan-y h-full">
           {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="embla__slide flex-[0_0_100%] h-full px-4"
-            >
+            <div key={index} className="embla__slide flex-[0_0_100%] h-full px-4">
               {slide}
             </div>
           ))}
         </div>
       </div>
+
       {/* Controls */}
       <div className="embla__controls absolute bottom-0 w-full h-[10%] flex items-center justify-center px-12">
         <div className="flex flex-row items-center justify-center gap-4">
-          {/* Prev Button */}
           <PrevButton
             onClick={onPrevButtonClick}
             disabled={prevBtnDisabled}
-            className="w-6 h-6 rounded-full bg-white text-black flex items-center justify-center shadow-md hover:bg-gray-200 hover:text-black transition-colors duration-200"
+            className="w-6 h-6 rounded-full bg-white text-black flex items-center justify-center shadow-md hover:bg-gray-200 transition-colors duration-200"
           />
 
-          {/* Dots */}
           <div className="embla__dots flex gap-2">
             {scrollSnaps.map((_, index) => (
               <DotButton
@@ -99,11 +113,10 @@ const EmblaCarousel: React.FC<PropType> = ({
             ))}
           </div>
 
-          {/* Next Button */}
           <NextButton
             onClick={onNextButtonClick}
             disabled={nextBtnDisabled}
-            className="w-6 h-6 rounded-full bg-white text-black flex items-center justify-center shadow-md hover:bg-gray-200 hover:text-black transition-colors duration-200"
+            className="w-6 h-6 rounded-full bg-white text-black flex items-center justify-center shadow-md hover:bg-gray-200 transition-colors duration-200"
           />
         </div>
       </div>

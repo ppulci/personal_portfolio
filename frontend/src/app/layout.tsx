@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "Peter's Portfolio Site",
     url: "https://yourdomain.com", // TODO: ADD DOMAIN
     siteName: "Peter Pulcini Portfolio",
-    locale: "en_US",
+    locale: "en_CA",
     type: "website",
   },
   robots: {

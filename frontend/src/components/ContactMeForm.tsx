@@ -14,7 +14,7 @@ export default function ContactMe() {
     const email = formData.get("email")?.toString() || "";
     const message = formData.get("message")?.toString() || "";
 
-    const res = await fetch("http://localhost:8080/api/contact", {
+    const res = await fetch("http://localhost:8080/api/contact", { // TODO: ADD BACKEND
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, message }),
