@@ -2,7 +2,9 @@
 import { useState } from "react";
 
 export default function ContactMe() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error" | "rate-limited">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "sent" | "error" | "rate-limited"
+  >("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -10,14 +12,20 @@ export default function ContactMe() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const name = formData.get("name")?.toString() || "";
-    const email = formData.get("email")?.toString() || "";
-    const message = formData.get("message")?.toString() || "";
+    const name = formData.get("name")?.toString() ?? "";
+    const email = formData.get("email")?.toString() ?? "";
+    const message = formData.get("message")?.toString() ?? "";
 
-    const res = await fetch("http://localhost:8080/api/contact", { // TODO: ADD BACKEND
+    // Optional runtime check
+    if (!email) {
+      setStatus("error");
+      return;
+    }
+
+    const res = await fetch("/api/resend_email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify({ to: email, subject: `New message from ${name}`, message }),
     });
 
     if (res.ok) {
@@ -36,14 +44,21 @@ export default function ContactMe() {
         Reach <span className="text-peter-yellow">Out</span>
       </h2>
       <p className="text-gray-600 text-center mb-10 max-w-xl sm:max-w-2xl text-sm sm:text-base">
-        Interested in what I&apos;m building? Let&apos;s connect and see how we can collaborate.
+        Interested in what I&apos;m building? Let&apos;s connect and see how we
+        can collaborate.
       </p>
 
-      <form onSubmit={handleSubmit} className="w-full max-w-lg sm:max-w-2xl flex flex-col gap-6">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-lg sm:max-w-2xl flex flex-col gap-6"
+      >
         {/* Name + Email */}
         <div className="flex flex-col lg:flex-row gap-6">
           <div className="flex-1 flex flex-col">
-            <label htmlFor="name" className="mb-2 text-left font-medium text-gray-700 text-sm sm:text-base">
+            <label
+              htmlFor="name"
+              className="mb-2 text-left font-medium text-gray-700 text-sm sm:text-base"
+            >
               Full Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -56,7 +71,10 @@ export default function ContactMe() {
           </div>
 
           <div className="flex-1 flex flex-col">
-            <label htmlFor="email" className="mb-2 text-left font-medium text-gray-700 text-sm sm:text-base">
+            <label
+              htmlFor="email"
+              className="mb-2 text-left font-medium text-gray-700 text-sm sm:text-base"
+            >
               Email Address <span className="text-red-500">*</span>
             </label>
             <input
@@ -72,7 +90,10 @@ export default function ContactMe() {
 
         {/* Message */}
         <div className="flex flex-col">
-          <label htmlFor="message" className="mb-2 text-left font-medium text-gray-700 text-sm sm:text-base">
+          <label
+            htmlFor="message"
+            className="mb-2 text-left font-medium text-gray-700 text-sm sm:text-base"
+          >
             Message <span className="text-red-500">*</span>
           </label>
           <textarea

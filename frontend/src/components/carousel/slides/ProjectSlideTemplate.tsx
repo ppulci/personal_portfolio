@@ -28,7 +28,7 @@ const ProjectSlide: React.FC<ProjectSlideProps> = ({
 }) => {
   return (
     <div className="w-full h-full overflow-hidden py-2">
-      <div className="flex flex-col lg:flex-row w-full h-full bg-white rounded-4xl shadow-md overflow-y-scroll lg:overflow-hidden">
+      <div className="flex flex-col lg:flex-row w-full h-full bg-white rounded-4xl shadow-md overflow-hidden">
         {/* Left Side: Content (60%) */}
         <div className="flex-[6] mx-6 flex flex-col justify-center">
           <div>
@@ -79,7 +79,7 @@ const ProjectSlide: React.FC<ProjectSlideProps> = ({
         </div>
 
         {/* Right Side: Image (40%) */}
-        <div className="flex-[4] relative flex items-center justify-center p-2">
+        <div className="flex-[4] hidden relative lg:flex items-center justify-center p-2">
           <Image
             src={image}
             alt={title}
