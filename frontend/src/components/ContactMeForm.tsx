@@ -25,7 +25,7 @@ export default function ContactMe() {
     const res = await fetch("/api/resend_email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ to: email, subject: `New message from ${name}`, message }),
+      body: JSON.stringify({ name, email, message}),
     });
 
     if (res.ok) {
