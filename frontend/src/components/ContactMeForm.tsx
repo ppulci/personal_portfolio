@@ -16,7 +16,6 @@ export default function ContactMe() {
     const email = formData.get("email")?.toString() ?? "";
     const message = formData.get("message")?.toString() ?? "";
 
-    // Optional runtime check
     if (!email) {
       setStatus("error");
       return;

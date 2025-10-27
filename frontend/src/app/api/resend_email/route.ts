@@ -8,7 +8,8 @@ export async function POST(req: NextRequest) {
     const data = await req.json();
     const { name, email, message } = data;
 
-    // Basic validation
+    console.log(data)
+
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Missing name, email, or message" },
@@ -16,9 +17,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Send email
     await resend.emails.send({
-      from: "Portfolio Site <emailredirect@resend.com>",
+      from: "Portfolio Site <contact@peterpulcini.ca>",
       to: process.env.MY_EMAIL!,
       subject: "Portfolio Contact Form",
       html: `
