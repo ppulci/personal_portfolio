@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { FaGithub, FaLinkedin, FaBars, FaTimes } from "react-icons/fa";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -30,15 +30,16 @@ export default function Navbar() {
           mt-0 lg:mt-6
         "
       >
-        {/* Logo */}
-        <div className="flex items-center">
-          <Image
-            src="/site_logo.png"
-            alt="Peter Pulcini Logo"
-            width={36}
-            height={36}
-            className="object-cover rounded-lg"
-          />
+        {/* Light / Dark Mode */}
+        <div className="flex items-center relative group">
+          <FaSun className="text-slate-700 hover:text-slate-900 text-2xl mr-2" />
+          <FaMoon className="text-slate-700 hover:text-slate-900 text-2xl hidden" />{" "}
+          {/* hidden until release */}
+          {/* Blurb that appears on hover */}
+          <div className="absolute left-0 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-200 text-gray-900 text-sm p-2 rounded shadow-lg text-nowrap">
+            <p>Light/Dark mode coming soon.</p>
+            <p>Sorry if your retinas are buring.</p>
+          </div>
         </div>
 
         {/* Desktop Nav Links */}

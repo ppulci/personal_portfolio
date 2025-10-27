@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Peter Pulcini | Portfolio",
     description: "Peter's Portfolio Site",
-    url: "https://yourdomain.com", // TODO: ADD DOMAIN
+    url: "https://peterpulcini.ca",
     siteName: "Peter Pulcini Portfolio",
     locale: "en_CA",
     type: "website",

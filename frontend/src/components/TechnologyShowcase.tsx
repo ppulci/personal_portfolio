@@ -100,7 +100,7 @@ export default function TechnologyShowcase() {
     <>
       {renderCategory("Front End", frontendItems)}
 
-      <div className="flex flex-row flex-wrap justify-center items-start gap-24">
+      <div className="flex flex-row flex-wrap justify-center items-start gap-0 lg:gap-24">
         <div className="w-full sm:w-[20rem]">
           {renderCategory("Back End", backendItems)}
         </div>
