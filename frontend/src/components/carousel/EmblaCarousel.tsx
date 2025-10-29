@@ -18,7 +18,7 @@ type PropType = {
 };
 
 const autoplayOptions = {
-  delay: 8000,
+  delay: 6000,
   stopOnMouseEnter: true,
   stopOnInteraction: true,
 };
@@ -60,11 +60,16 @@ const EmblaCarousel: React.FC<PropType> = ({
   useEffect(() => {
     if (!carouselContainerRef.current || !emblaApi) return;
 
+    let hasScrolled = false;
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
-        if (entry.isIntersecting) {
-          emblaApi.scrollTo(0);
+        if (entry.isIntersecting && !hasScrolled) {
+          hasScrolled = true;
+          setTimeout(
+            () => requestAnimationFrame(() => emblaApi.scrollTo(0)),
+            500
+          );
         }
       },
       {
@@ -82,10 +87,16 @@ const EmblaCarousel: React.FC<PropType> = ({
       className={`embla w-full max-w-none ${carouselHeight}`}
     >
       {/* Viewport */}
-      <div className="embla__viewport w-full h-[90%] overflow-hidden" ref={emblaRef}>
+      <div
+        className="embla__viewport w-full h-[90%] overflow-hidden"
+        ref={emblaRef}
+      >
         <div className="embla__container flex touch-pan-y h-full">
           {slides.map((slide, index) => (
-            <div key={index} className="embla__slide flex-[0_0_100%] h-full px-4">
+            <div
+              key={index}
+              className="embla__slide flex-[0_0_100%] h-full px-4"
+            >
               {slide}
             </div>
           ))}

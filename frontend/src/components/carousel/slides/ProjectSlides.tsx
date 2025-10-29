@@ -50,7 +50,7 @@ export const ProjectSlides = [
           seamlessly into the game's art style. Dive into the world of
           Don't Starve Together with Chrollo and explore new strategies and
           playstyles!"
-    techStack={["Lua Programming Language", "Don't Starve Mod Tools", "Steam", "Photoshop"]}
+    techStack={["Lua Programming Language", "Don't Starve Mod Tools", "Spriter", "Photoshop"]}
     pageLink="https://github.com/ppulci/DST_Custom_Character_Chrollo"
     image="/chrollo_dst_portrait.png"
   />,
@@ -65,7 +65,7 @@ export const ProjectSlides = [
         React, TailwindCSS, Next.js, and Framer Motion for animations, while
         the backend runs on a Gin server written in Go. The site includes
         a few animations and a touch of personality to bring it all together."
-    techStack={["React", "Next.js", "TailwindCSS", "Framer Motion", "TypeScript", "MongoDB"]}
+    techStack={["React", "Next.js", "TailwindCSS", "Framer Motion", "TypeScript"]}
     pageLink="https://github.com/ppulci/Personal-Portfolio"
     image="/website_portfolio_code.png"
     picHeight={350}

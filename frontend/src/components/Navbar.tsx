@@ -8,6 +8,7 @@ import { FaSun, FaMoon } from "react-icons/fa";
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false); {/* USED FOR LIGHT/DARK TOGGLE */}
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -32,19 +33,26 @@ export default function Navbar() {
       >
         {/* Light / Dark Mode */}
         <div className="flex items-center relative group">
-          <FaSun className="text-slate-700 hover:text-slate-900 text-2xl mr-2" />
-          <FaMoon className="text-slate-700 hover:text-slate-900 text-2xl hidden" />{" "}
-          {/* hidden until release */}
-          {/* Blurb that appears on hover */}
-          <div className="absolute left-0 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-200 text-gray-900 text-sm p-2 rounded shadow-lg text-nowrap">
+          <FaSun
+            className="text-slate-700 hover:text-slate-900 text-2xl mr-2"
+            onClick={() => setShowTooltip(!showTooltip)}
+          />
+          <FaMoon className="text-slate-700 hover:text-slate-900 text-2xl hidden" /> {/* Moon hidden until logic is implemented later */}
+          
+          {/* Tooltip */}
+          <div
+            className={`absolute left-0 top-full mt-2 transition-opacity bg-gray-200 text-gray-900 text-sm p-2 rounded shadow-lg text-nowrap ${
+              showTooltip ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          >
             <p>Light/Dark mode coming soon.</p>
-            <p>Sorry if your retinas are buring.</p>
+            <p>Sorry if your retinas are burning.</p>
           </div>
         </div>
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex flex-1 justify-center">
-          <div className="flex space-x-6">
+          <div className="flex justify-center gap-6">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (

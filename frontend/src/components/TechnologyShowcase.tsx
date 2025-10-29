@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import {
   SiJavascript,
   SiTypescript,
@@ -74,12 +76,30 @@ export default function TechnologyShowcase() {
           {title}
         </h2>
 
-        <ul
+        <motion.ul
           role="list"
           className="flex flex-wrap justify-center gap-6 text-center"
+          initial="hidden"
+          whileInView={"visible"}
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
         >
           {sorted.map(({ name, Icon, color }) => (
-            <li key={name} className="flex flex-col items-center">
+            <motion.li
+              key={name}
+              className="flex flex-col items-center"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
               <div
                 className={`w-14 h-14 rounded-full mx-3 bg-white border border-slate-200 shadow-sm flex items-center justify-center transition-transform transform hover:scale-105`}
                 aria-hidden="true"
@@ -87,11 +107,10 @@ export default function TechnologyShowcase() {
               >
                 <Icon className={`text-4xl ${color}`} aria-hidden="true" />
               </div>
-
               <span className="mt-2 text-sm text-center">{name}</span>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
     );
   }
