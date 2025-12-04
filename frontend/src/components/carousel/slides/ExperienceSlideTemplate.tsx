@@ -5,7 +5,7 @@ type ExperienceSlideProps = {
   title: string;
   date: string;
   description: string;
-  contributions?: string[];
+  contributions?: string;
   techStack?: string[];
   image: string;
   imageArgs?: string;
@@ -20,7 +20,7 @@ const ExperienceSlideTemplate: React.FC<ExperienceSlideProps> = ({
   image,
   imageArgs = "",
   pageLink,
-  contributions = [],
+  contributions = "",
 }) => {
   return (
     <div className="w-full h-full overflow-hidden py-2">
@@ -41,12 +41,8 @@ const ExperienceSlideTemplate: React.FC<ExperienceSlideProps> = ({
 
           {contributions.length > 0 && (
             <ul className="text-sm wrap-normal mt-4 list-disc list-inside">
-              <span className="font-semibold">Key Contributions:</span>
-              {contributions.map((item) => (
-                <li key={item} className="pl-2">
-                  {item}
-                </li>
-              ))}
+              <span className="font-semibold">Core Responsibilities:</span>
+              <p className="text-xs sm:text-sm">{contributions}</p>
             </ul>
           )}
 
